@@ -1,13 +1,13 @@
 <?php 
-use App\Http\Controllers\Admin\Master\CategoryController; 
+use App\Http\Controllers\Admin\Master\PageDetailController; 
 use Illuminate\Support\Facades\Route;
 
 // prefix name route = admin.
 Route::prefix('/master')->name('master.')->group(function () {
 
-     // ==== Category Routes ====
-    Route::prefix('/category')->name('category.')->group(function () {
-        $localClass = CategoryController::class;
+     // ==== page-detail Routes ====
+    Route::prefix('/page-detail')->name('page-detail.')->group(function () {
+        $localClass = PageDetailController::class;
         Route::get('/', [$localClass, 'index'])->name('index');
         Route::get('/edit/{id}', [$localClass, 'edit'])->name('edit');
         Route::post('/submit', [$localClass, 'create'])->name('create');

@@ -1,8 +1,8 @@
 @php
     $masterDataMenus = [
        [
-            'route' => 'admin.master.category.index',
-            'title' => 'Category',
+            'route' => 'admin.master.page-detail.index',
+            'title' => 'Page Detail',
             'icon' => 'ti ti-window',
         ],
     ];
