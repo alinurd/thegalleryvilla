@@ -5,6 +5,11 @@
             'title' => 'Page Detail',
             'icon' => 'ti ti-window',
         ],
+       [
+            'route' => 'admin.master.facility.index',
+            'title' => 'Facility',
+            'icon' => 'ti ti-window',
+        ],
     ];
 @endphp
 <ul class="menu-inner py-1">
