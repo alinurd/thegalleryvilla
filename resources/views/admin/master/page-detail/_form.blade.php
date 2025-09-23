@@ -28,16 +28,37 @@
   </div>
 </div> --}}
 
+    
   <div class="row g-1 mb-3">
-    <div class="col-md-12 col-12">
-      <label for="category" id="label-category" class="form-label"></label>
-      <input type="text" class="form-control" id="category" name="title" required />
+    <div class="col-md-8 col-12">
+      <label for="title" id="label-title" class="form-label"></label>
+      <input type="text" class="form-control" id="title" name="title" required />
     </div>
   </div>
 
   <div class="mb-3">
-    <label for="description" id="label-description" class="form-label"></label>
-    <textarea name="description" id="description" class="form-control"></textarea>
+    <label for="about" id="label-about" class="form-label"></label>
+    <textarea name="about" id="about" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="location" id="label-location" class="form-label"></label>
+    <textarea name="location" id="location" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="facility" id="label-facility" class="form-label"></label>
+    <textarea name="facility" id="facility" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="event_type" id="label-event_type" class="form-label"></label>
+    <textarea name="event_type" id="event_type" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="pin_point" id="label-pin_point" class="form-label"></label>
+    <textarea name="pin_point" id="pin_point" class="form-control"></textarea>
   </div>
 
   <!-- Featured Image -->
@@ -82,6 +103,7 @@
       </div>
     </div>
   </div>
+
 </form>
 
 <script>
@@ -89,8 +111,15 @@ const lang = {
   en: {
     sort: "Sort",
     status: "Status",
-    category: "Category",
-    description: "Description",
+
+    title: "Page Detail",
+    about: "About As",
+    location: "Strategic Location",
+    facility: "Facility",
+    event_type: "Suitable Event Type",
+    pin_point: "Pint Point",
+
+
     featured: "Featured Image",
     featuredNote: "Please upload an image sized 400 x 400 pixels",
     choose: "Choose",
@@ -98,17 +127,21 @@ const lang = {
     reset: "Reset",
     loading: "Loading...",
 
-    placeholder: {
-      sort: "Enter sort number",
-      category: "Enter category name",
-      description: "Enter description"
-    }
+     
   },
   id: {
     sort: "Urutan",
     status: "Status",
-    category: "Kategori",
-    description: "Deskripsi",
+
+    title: "Page Detail",
+    about: "About As",
+    location: "Strategic Location",
+    facility: "Facility",
+    event_type: "Suitable Event Type",
+    pin_point: "Pint Point",
+
+
+    
     featured: "Gambar Utama",
     featuredNote: "Silakan unggah gambar berukuran 400 x 400 pixel",
     choose: "Pilih",
@@ -116,26 +149,25 @@ const lang = {
     reset: "Reset",
     loading: "Memuat...",
 
-    placeholder: {
-      sort: "Masukkan nomor urut",
-      category: "Masukkan nama kategori",
-      description: "Masukkan deskripsi"
-    }
+    
   }
 };
 
 function setLang(l) {
   // Label
   document.getElementById("label-sort").innerText = lang[l].sort;
-  document.getElementById("label-status").innerText = lang[l].status;
-  document.getElementById("label-category").innerText = lang[l].category;
-  document.getElementById("label-description").innerText = lang[l].description;
+  document.getElementById("label-status").innerText = lang[l].status; 
   document.getElementById("label-featured").innerText = lang[l].featured;
 
-  // Placeholder
-  document.getElementById("sort").placeholder = lang[l].placeholder.sort;
-  document.getElementById("category").placeholder = lang[l].placeholder.category;
-  document.getElementById("description").placeholder = lang[l].placeholder.description;
+
+
+  document.getElementById("label-about").innerText = lang[l].about;
+  document.getElementById("label-title").innerText = lang[l].title;
+  document.getElementById("label-location").innerText = lang[l].location;
+  document.getElementById("label-facility").innerText = lang[l].facility;
+  document.getElementById("label-event_type").innerText = lang[l].event_type;
+  document.getElementById("label-pin_point").innerText = lang[l].pin_point;
+ 
 
   // Featured image
   document.getElementById("featured-note").innerText = lang[l].featuredNote;
@@ -153,7 +185,7 @@ function setLang(l) {
 }
 
 // default bahasa Indonesia
-setLang("id");
+setLang("en");
 </script>
 
 <style>

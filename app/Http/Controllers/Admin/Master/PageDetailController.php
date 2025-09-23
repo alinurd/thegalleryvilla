@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 class PageDetailController extends Controller
 {
     protected $prefixRoute = 'admin.master.page-detail.';
-
     public function index()
     {
         $data['data'] = PageDetail::get();
@@ -19,8 +18,16 @@ class PageDetailController extends Controller
     }
 
     public function create(Request $request)
-    {
-        $data = $request->only(['id', 'sort', 'status', 'title', 'description', 'image']);
+    { 
+
+        $data = $request->only(['id', 'sort', 'status', 'image',
+                                    'title', 
+                                    'about', 
+                                    'location', 
+                                    'facility', 
+                                    'event_type', 
+                                    'pin_point', 
+                                ]);
         $data = (object) $data;
 
         if($data->id == 0){
