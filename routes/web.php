@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function() {
+        return redirect()->route('guest.index');
+ });
+
+ 
+Route::get('/login', function() {
     return redirect()->route('admin.login.view');
 });
 
