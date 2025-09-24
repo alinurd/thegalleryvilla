@@ -10,6 +10,11 @@
             'title' => 'Facility',
             'icon' => 'ti ti-window',
         ],
+       [
+            'route' => 'admin.master.gallery.index',
+            'title' => 'Photo Gallery',
+            'icon' => 'ti ti-window',
+        ],
     ];
 @endphp
 <ul class="menu-inner py-1">
