@@ -5,5 +5,6 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->name('guest.')->group(function() {
         $localClass = LanddingController::class;
         Route::get('/', [$localClass, 'index'])->name('index'); 
+        Route::get('/', [$localClass, 'index'])->name('contact.send'); 
 });
 

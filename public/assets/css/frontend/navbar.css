@@ -1,0 +1,48 @@
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+ 
+body {
+    padding-top: 210px; 
+}
+ 
+.topbar {
+    background: #fff;
+    font-size: 14px;
+}
+.topbar a {
+    color: #5a4634;
+}
+.topbar a:hover {
+    color: #a56c2f;
+}
+
+/* Logo */
+.logo-img {
+    max-height: 80px;
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    color: #5a4634;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background: #5a4634;
+    color: #fff;
+}
