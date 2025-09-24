@@ -1,0 +1,145 @@
+.facilities {
+    background: #f5ebe3;
+}
+
+.facilities .title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #5a3d31;
+    line-height: 1.5;
+}
+
+.facilities .highlight {
+    color: #b85c38;
+    font-weight: 700;
+}
+
+.facilities .desc {
+    font-size: 15px;
+    color: #444;
+}
+
+.villa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.villa-item {
+    background: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.villa-item.active,
+.villa-item:hover {
+    background: #b85c38;
+    color: #fff;
+}
+
+
+.images-stack {
+    position: relative;
+    width: 380px;
+    margin: 0 auto;
+    height: 260px; /* supaya tinggi section terjaga */
+}
+
+.img-stack {
+    width: 160px;
+    border-radius: 8px;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    position: absolute;
+    transition: transform .3s ease;
+}
+ .images-stack {
+    position: relative;
+    width: 720px;       /* lebar total area stack */
+    margin: 0 auto;
+    height: 300px;      /* tinggi area stack */
+}
+
+.img-stack {
+    position: absolute;
+    width: 250px;
+    border-radius: 8px;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform .3s ease, top .3s ease;
+}
+
+/* posisi foto kiri */
+.img-stack.left {
+    top: 40px;
+    left: 0;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+.images-stack {
+    position: relative;
+    width: 380px;
+    margin: 0 auto;
+    height: 260px; /* supaya tinggi section terjaga */
+}
+
+.img-stack {
+    width: 160px;
+    border-radius: 8px;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    position: absolute;
+    transition: transform .3s ease;
+}
+
+/* posisi */
+.img-stack.left {
+    top: 40px;
+    left: 0;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+.img-stack.center {
+    top: 0; /* lebih tinggi */
+    left: 100px;
+    width: 200px; /* lebih besar */
+    z-index: 3;
+}
+
+.img-stack.right {
+    top: 40px;
+    left: 220px;
+    transform: rotate(10deg);
+    z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .images-stack {
+        width: 260px;
+        height: 180px;
+    }
+    .img-stack {
+        width: 110px;
+    }
+    .img-stack.center {
+        width: 140px;
+        top: 0;
+        left: 60px;
+    }
+    .img-stack.right {
+        top: 30px;
+        left: 150px;
+    }
+    .img-stack.left {
+        top: 30px;
+    }
+}
+
