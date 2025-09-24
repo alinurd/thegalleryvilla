@@ -1,7 +1,9 @@
-<section id="hero" class="hero">
-    <div class="container text-center">
-        <h1>Selamat Datang di The Gallery Villa</h1>
-        <p>Tempat terbaik untuk gathering, retreat, dan acara keluarga.</p>
-        <a href="#about" class="btn">Jelajahi</a>
+ 
+ <section class="hero">
+    <div class="hero-images">
+        <img src="{{ asset('assets/img/villa/2.jpg') }}" alt="Villa Left" class="side-img">
+        <img src="{{ asset('assets/img/villa/1.jpg') }}" alt="Villa Center" class="center-img">
+        <img src="{{ asset('assets/img/villa/3.jpg') }}" alt="Villa Right" class="side-img">
     </div>
 </section>
+  
