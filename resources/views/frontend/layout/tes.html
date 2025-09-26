@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gallery Villa - Villa Eksklusif di Puncak Bogor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c5530;
+            --secondary-color: #7e9b7c;
+            --accent-color: #d4a574;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            color: #555;
+            font-weight: 500;
+            margin: 0 8px;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+        }
+        
+        .hero-bg-img {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-bg-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .hero-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #c09565;
+            border-color: #c09565;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        .villa-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        
+        .villa-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .villa-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .villa-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .villa-content {
+            padding: 25px;
+        }
+        
+        .villa-content h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .facility-icon {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .facility-item {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        
+        .facility-item h4 {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .gallery-section {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            height: 220px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .clients-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .contact-section {
+            background-color: #f0f0f0;
+            padding: 60px 0;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        
+        .form-control {
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.1rem;
+            margin-right: 12px;
+        }
+        
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section {
+                padding: 80px 0;
+            }
+            
+            .hero-bg {
+                flex-direction: column;
+            }
+            
+            .hero-bg-img {
+                height: 33.33%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/62813817623475" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo">TG</div>
+                The Gallery Villa
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#villas">Villa Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facilities">Fasilitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeri Foto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pemesanan">Pemesanan Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Hubungi Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg">
+            <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1>Nikmati Suasana Segar Pegunungan Puncak Bogor</h1>
+                        <p>Villa eksklusif dengan kapasitas besar (60-100 orang). Cocok untuk acara keluarga, gathering kantor, retret, reuni, maupun kegiatan komunitas.</p>
+                        <a href="#contact" class="btn btn-primary-custom">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p>Nikmati suasana sejuk pegunungan dan pemandangan indah khas Puncak Bogor di Villa Aurora, vila eksklusif dengan kapasitas besar (60-100 orang). Cocok untuk acara keluarga, gathering kantor, retret, reuni, maupun kegiatan komunitas.</p>
+                    <p>Kami menghadirkan fasilitas lengkap dengan kenyamanan layaknya rumah sendiri, ditambah udara segar pegunungan yang membuat setiap momen semakin berkesan.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Villa Aurora" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Villas Section -->
+    <section class="villa-section" id="villas">
+        <div class="container">
+            <h2 class="section-title">Villa yang Kami Sediakan</h2>
+            <p class="text-center mb-5">Kami menyediakan beberapa villa yang dapat menyesuaikan kebutuhan Anda baik liburan keluarga, acara gathering kantor, atau acara lainnya.</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="villa-card">
+                        <div class="villa-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="villa-content">
+                            <h3>01. Villa Aurora</h3>
+                            <p>Villa mewah dengan kapasitas hingga 100 orang, dilengkapi fasilitas lengkap untuk acara besar dan gathering perusahaan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="villa-card">
+                        <div class="villa-img" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="villa-content">
+                            <h3>02. Villa Esperanza</h3>
+                            <p>Villa eksklusif dengan pemandangan langsung ke pegunungan, ideal untuk acara keluarga dan perayaan khusus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="py-5" id="facilities">
+        <div class="container">
+            <h2 class="section-title">Fasilitas Villa Kami</h2>
+            <p class="text-center mb-5">Villa-villa kami dilengkapi dengan berbagai fasilitas yang cocok untuk mengisi liburan keluarga, acara gathering perusahaan, acara ulang tahun, ataupun acara lainnya.</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h4>20 Kamar Tidur</h4>
+                        <p>Kamar tidur nyaman dengan kapasitas besar untuk mengakomodasi semua tamu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h4>Lapangan Basket</h4>
+                        <p>Fasilitas olahraga lengkap termasuk lapangan basket untuk aktivitas outdoor.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <h4>Kolam Renang</h4>
+                        <p>Kolam renang dengan pemandangan pegunungan yang menakjubkan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interest Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Apakah Anda Berminat?</h2>
+            <p class="mb-4">Kami menghadirkan fasilitas lengkap dengan kenyamanan layaknya rumah sendiri, ditambah udara segar pegunungan yang membuat setiap momen semakin berkesan.</p>
+            <a href="#contact" class="btn btn-primary-custom">Hubungi Kami Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Foto</h2>
+            <p class="text-center mb-5">Kegiatan kami mencakup beragam galeri menarik, yang menampilkan kreasi luar biasa para peserta, proyek inovatif, dan pertunjukan luar biasa, yang menumbuhkan rasa bangga dan pencapaian di antara semua yang terlibat.</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Villa Aurora">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Villa Aurora">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Villa Aurora">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section" id="clients">
+        <div class="container">
+            <h2 class="section-title">Siapa Pelanggan Kami</h2>
+            <p class="text-center mb-5">Loyalitas pelanggan kami merupakan bukti komitmen teguh kami untuk menyediakan produk dan layanan yang luar biasa, membangun hubungan yang kuat, dan secara konsisten melampaui harapan pelanggan kami.</p>
+            
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=AITINDO" alt="AITINDO" class="img-fluid client-logo">
+                </div>
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=QDBANK" alt="QDBANK" class="img-fluid client-logo">
+                </div>
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=ENB" alt="ENB" class="img-fluid client-logo">
+                </div>
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=CSfinance" alt="CSfinance" class="img-fluid client-logo">
+                </div>
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=Weettouse" alt="Weettouse" class="img-fluid client-logo">
+                </div>
+                <div class="col-md-2 col-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/120x60/2c5530/ffffff?text=CENTRATAMA" alt="CENTRATAMA" class="img-fluid client-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="text-center mb-5">Jika Anda memiliki pertanyaan, permintaan, atau ingin mempelajari lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi kami melalui saluran yang disediakan, dan tim kami yang berdedikasi akan dengan senang hati membantu Anda.</p>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <div class="contact-info">
+                        <h4>Lokasi</h4>
+                        <div class="mb-4">
+                            <h5>Villa Aurora</h5>
+                            <p>Jl. Kampung Brujul RT 1 RW 2 No. 5, Gang Aek Sarula, Puncak, Bogor</p>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">Lihat Peta</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Villa Esperanza</h5>
+                            <p>Jalan Raya Puncak Cisarua, Gang Aek no. 100, Puncak, Bogor</p>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">Lihat Peta</a>
+                        </div>
+                        
+                        <h4>Kontak</h4>
+                        <p><i class="fas fa-globe me-2"></i> www.thegalleryvilla.id</p>
+                        <p><i class="fas fa-envelope me-2"></i> thegalleryvilla@gmail.com</p>
+                        <p><i class="fab fa-whatsapp me-2"></i> +62 813-1762-3475</p>
+                        
+                        <h4 class="mt-4">Our Social Network</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your e-mail">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Subject">
+                            <textarea class="form-control" rows="5" placeholder="Messages"></textarea>
+                            <button type="submit" class="btn btn-primary-custom">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>The Gallery Villa</h5>
+                    <p>Nikmati suasana sejuk pegunungan dan pemandangan indah khas Puncak Bogor di Villa Aurora, vila eksklusif dengan kapasitas besar (60-100 orang).</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Link Terkait</h6>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">Tentang Kami</a>
+                        <a href="#villas">Villa Kami</a>
+                        <a href="#facilities">Fasilitas</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>The Gallery Villa</h6>
+                    <div class="footer-links">
+                        <a href="#villas">Villa Aurora</a>
+                        <a href="#villas">Villa Esperanza</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Tautan</h6>
+                    <div class="footer-links">
+                        <a href="#about">About us</a>
+                        <a href="#facilities">Services</a>
+                        <a href="#gallery">Blog</a>
+                        <a href="#">Terms of service</a>
+                        <a href="#">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Ikuti Kami</h6>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; Copyright, 2025 The Gallery Villa. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                navbar.classList.add('bg-white');
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                navbar.classList.remove('bg-white');
+                navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

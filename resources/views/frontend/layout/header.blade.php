@@ -22,7 +22,7 @@
     {{-- 🏡 Logo --}}
     <div class="logo text-center py-2">
         <a href="/" class="d-inline-block">
-            <img src="{{ asset('assets/img/logo-maxon.png') }}" alt="The Gallery Villa" class="logo-img">
+            <img src="{{ asset('assets/img/villa/logo.png') }}" alt="The Gallery Villa" class="logo-img">
         </a>
     </div>
 
