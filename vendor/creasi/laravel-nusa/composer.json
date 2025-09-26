@@ -1,0 +1,112 @@
+{
+    "name": "creasi/laravel-nusa",
+    "description": "A Laravel package that aim to provide Indonesia' Administrative Data",
+    "keywords": [
+        "laravel",
+        "package",
+        "indonesia",
+        "provinsi",
+        "kabupaten",
+        "kota",
+        "kecamatan",
+        "kelurahan",
+        "desa"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Creasi Developers",
+            "email": "developers@creasi.co"
+        }
+    ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/creasico"
+        }
+    ],
+    "support": {
+        "docs": "https://nusa.creasi.dev",
+        "source": "https://github.com/creasico/laravel-nusa",
+        "forum": "https://github.com/orgs/creasico/discussions",
+        "issues": "https://github.com/creasico/laravel-nusa/issues"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "testbench vendor:publish --tag=creasi-migrations"
+        ],
+        "post-install-cmd": [
+            "@php -r \"file_exists('workbench/.env') || copy('workbench/.env.example', 'workbench/.env');\""
+        ],
+        "fix": [
+            "pint --preset laravel"
+        ],
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "testbench package:test --ansi"
+        ],
+        "testbench": [
+            "Composer\\Config::disableProcessTimeout",
+            "testbench"
+        ],
+        "testbench:purge": [
+            "testbench workbench:purge-skeleton"
+        ],
+        "tinker": [
+            "Composer\\Config::disableProcessTimeout",
+            "testbench tinker"
+        ],
+        "upstream": [
+            "docker compose --env-file workbench/.env"
+        ],
+        "upstream:up": [
+            "Composer\\Config::disableProcessTimeout",
+            "docker compose --env-file workbench/.env up -d",
+            "@php -r \"sleep(5);\"",
+            "testbench nusa:import --fresh"
+        ],
+        "upstream:down": [
+            "docker compose --env-file workbench/.env down",
+            "testbench workbench:purge-skeleton"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Creasi\\Nusa\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Creasi\\Tests\\": "tests",
+            "Database\\Seeders\\": "database/seeders/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "ext-sqlite3": "*",
+        "laravel/framework": "^9.0|^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "composer-runtime-api": "*",
+        "laravel/pint": "^1.1",
+        "nunomaduro/collision": "^7.4|^8.0",
+        "orchestra/testbench": "^8.5|^9.0|^10.0",
+        "phpmyadmin/sql-parser": "^5.11",
+        "spatie/fork": "^1.2"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Creasi\\Nusa\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
