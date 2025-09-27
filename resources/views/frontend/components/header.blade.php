@@ -35,7 +35,6 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
                 <ul class="navbar-nav text-center gap-4">
- 
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.home')}}" href="{{ route('guest.home') }}">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.about')}}" href="{{ route('guest.about') }}">Mengenai Kami</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>

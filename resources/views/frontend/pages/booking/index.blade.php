@@ -1,9 +1,6 @@
 @extends('frontend.layout.app')
-
-<section id="root" class="root">
-    <div class="container">
-        <div class="text-center">
-             this is booking page
-        </div>
+<div class="card p-3 text-center">
+    <div class="card-body"> 
+        <span class="title">This is <span class="highlight">Booking</span> Page</span>
     </div>
-</section>
+</div>

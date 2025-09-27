@@ -1,9 +1,6 @@
 @extends('frontend.layout.app')
-
-<section id="root" class="root">
-    <div class="container">
-        <div class="row align-items-center">
-             this is facility page
-        </div>
+<div class="card p-3 text-center">
+    <div class="card-body"> 
+        <span class="title">This is <span class="highlight">Facility</span> Page</span>
     </div>
-</section>
+</div>
