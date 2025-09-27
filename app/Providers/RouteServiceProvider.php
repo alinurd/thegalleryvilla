@@ -29,15 +29,17 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+    Route::middleware('api')
+        ->prefix('api')
+        ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
-                ->group(base_path('routes/admin/main.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+    Route::middleware('web')
+        ->group(function () {
+            require base_path('routes/web.php');
+            require base_path('routes/admin/main.php');
+            require base_path('routes/forntend/main.php');
         });
+});
+
     }
 }
