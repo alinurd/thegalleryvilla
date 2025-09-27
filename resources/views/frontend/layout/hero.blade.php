@@ -457,3 +457,68 @@ document.addEventListener("DOMContentLoaded", () => {
   setup();
 });
 </script>
+
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Info -->
+      <div class="col info">
+        
+        <div class="card">
+      <div class="card-body">
+        <div class="info-item">
+          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+          <div class="info-content">
+            <h4>Lokasi</h4>
+            <p><strong>Villa Aurora</strong><br>Jl. Kampung Brujul RT 1 RW 2 No. 5, Gang Aek Sarula<br>
+              <a href="https://maps.google.com" target="_blank">Lihat peta</a>
+            </p>
+            <p><strong>Villa Esperanza</strong><br>Jalan Raya Puncak Cisarua, Gang Aek no. 100<br>
+              <a href="https://maps.google.com" target="_blank">Lihat peta</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <div class="info-content">
+            <h4>Website/eMail</h4>
+            <p>www.thegalleryvilla.id<br>thegalleryvilla@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="icon"><i class="fab fa-whatsapp"></i></span>
+          <div class="info-content">
+            <h4>Whatsapp</h4>
+            <p>+62 813-1762-3475</p>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      
+      <div class="col form">
+        <div class="card">
+      <div class="card-body">
+        <form action="{{ route('guest.contact.send') }}" method="POST">
+          @csrf
+          <div class="row">
+            <div class="col"><input type="text" name="name" placeholder="Your Name" required></div>
+            <div class="col"><input type="email" name="email" placeholder="Your e-mail" required></div>
+          </div>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Messages" required></textarea>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</section>
