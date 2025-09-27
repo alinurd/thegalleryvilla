@@ -35,12 +35,13 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
                 <ul class="navbar-nav text-center gap-4">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Mengenai Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#facilities">Fasilitas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeri Foto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#booking">Pemesanan Online</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Hubungi Kami</a></li>
+ 
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.home')}}" href="{{ route('guest.home') }}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.about')}}" href="{{ route('guest.about') }}">Mengenai Kami</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.gallery')}}" href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li>
                 </ul>
             </div>
         </div>
