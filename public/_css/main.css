@@ -12,11 +12,17 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--color-secondary);
 }
 
-p {
-  margin: 0 0 15px;
+ 
+
+.coreTitle{
+   color: var(--color-primary);
 }
-
-
+.coreTitle .highlight{
+   color: var(--color-highlight);
+}
+.coreDsc{
+   color: var(--color-highlight);
+}
 .header-fixed {
     position: fixed;
     top: 0;

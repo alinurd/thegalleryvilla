@@ -1,9 +1,854 @@
-@import url('base.css');
-@import url('about.css');
-@import url('facility.css');
-@import url('navbar.css');
-@import url('hero.css');
-@import url('section.css');
-@import url('cards.css');
-@import url('contact.css');
-@import url('footer.css');
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/GOTHIC.woff') format('woff');
+}
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/GOTHICB.woff') format('woff');
+}
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/GOTHICBI.woff') format('woff');
+}
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/GOTHICI.woff') format('woff');
+}
+body {
+    font-family: 'Century Gothic', sans-serif;
+    color: #555;
+ 
+   }
+      /* Header Fixed */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    background: #fbfbfbfb;  
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+ body {
+    padding-top: 170px;  
+}
+
+/* Topbar */
+.topbar {
+    background: #fbfbfbfb; /* lebih gelap dari navbar */
+    font-size: 14px;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.topbar a {
+    color: #f5e9d9;
+}
+.topbar a:hover {
+    color: #fa0b03;
+}
+
+/* Logo */
+.logo-img {
+    max-height: 70px;
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #f5e9d9; /* warna teks terang */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background: #c07b3f; /* coklat emas highlight */
+    color: #fff;
+}
+
+
+.title {
+  display: block;
+  /* font-weight: 700; */
+  font-size: 28px;
+  color: #a56c2f;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.highlight {
+      font-weight: 700;
+
+  color: #a56c2f;
+}
+
+
+/* ===== Hero Section ===== */
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d5a064;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #5a4634;
+    text-align: center;
+}
+
+.about .btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 2px solid #a56c2f;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #a56c2f;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  background: #ffffff;
+  padding-bottom: 30px;
+}
+
+.hero-images {
+   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-images img {
+  object-fit: cover;
+  max-width: 75%;
+  height: auto;
+}
+
+ @media (max-width: 992px) {
+  .hero-images img {
+    width: 60%;
+  }
+}
+
+ @media (max-width: 576px) {
+  .hero-images img {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+/* ===== Facilities Section ===== */
+.facilities {
+  background: #f5ebe3; 
+    margin-bottom: 30px;
+
+}
+
+.facilities 
+
+.facilities .highlight {
+      font-weight: 700;
+
+  color: #a56c2f;
+}
+
+.facilities .desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+/* Villa List */
+.villa-list {
+  display: flex;
+    flex-direction: column; /* susun ke bawah */
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.villa-item {
+  background: #fff;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  
+  width: fit-content;   /* biar button ngikut panjang teks */
+  min-width: unset;     /* reset biar nggak auto full */
+}
+
+.villa-item.active,
+.villa-item:hover {
+  background: #9b6a45;
+  color: #fff;
+}
+
+/* Images */
+.facilities-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.facilities-images img {
+  object-fit: cover;
+  max-width: 85%;
+  border-radius: 10px;
+   transition: transform 0.3s ease;
+}
+
+.facilities-images img:hover {
+  transform: scale(1.03);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .facilities .title {
+    font-size: 24px;
+  }
+
+  .facilities-images img {
+    width: 70%;
+  }
+}
+
+/* HP */
+@media (max-width: 576px) {
+  .facilities {
+    /* padding: 40px 15px; */
+    text-align: center;
+  }
+
+  .facilities .title {
+    font-size: 22px;
+  }
+
+  .facilities .desc {
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .villa-list {
+    justify-content: center; /* tombol center di hp */
+  }
+
+  .facilities-images img {
+    width: 100%;
+  }
+}
+
+
+
+
+/* fasliti */
+
+
+.fasilitas .title {
+  display: block;
+  /* font-weight: 700; */
+  font-size: 28px;
+  color: #a56c2f;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.fasilitas .highlight {
+      font-weight: 700;
+
+  color: #a56c2f;
+}
+
+.fasilitas .desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+/* Tombol Switch */
+.btn-villa {
+  border: 2px solid #9b6a45;
+  color: #9b6a45;
+  background: #f9f3f0;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-villa:hover {
+  background: #9b6a45;
+  color: #fff;
+}
+
+.btn-villa.active {
+  background: #9b6a45;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(184, 92, 56, 0.25);
+}
+
+/* Card fasilitas */
+/* Card fasilitas */
+.facility-card {
+  text-align: center;
+}
+
+.facility-img {
+  width: 100%;
+  max-width: 240px; /* agak lebih kecil */
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.facility-img:hover {
+  transform: scale(1.05);
+}
+
+.facility-card p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #5a4634;
+}
+
+/* Gambar lebih kecil */
+.facility-img {
+  width: 100%;
+  max-width: 350px; /* perkecil gambar */
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+/* .facility-img:hover {
+  transform: scale(1.03);
+} */
+
+.facility-card p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #5a4634;
+}
+
+/* Dots indikator */
+.dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #c4a88a;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #9b6a45;
+  transform: scale(1.2);
+}
+
+
+ 
+ .facility-img-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.25s ease;
+}
+
+
+.facility-villa-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/* Section Minat */
+#minat {
+  position: relative;
+  padding: 4rem 0;
+  background: url('/assets/img/villa/2.jpg') center center/cover no-repeat;
+}  
+#minat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f2e3d7ed;
+  z-index: 1;
+} 
+
+ #minat .container {
+  position: relative;
+  z-index: 2;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+}
+
+
+/* Bagian teks */
+#minat .content-text {
+  flex: 1;
+}
+
+
+
+#minat h4 {
+  font-size: 1.8rem;  
+  color: #774d1a;
+  margin-bottom: 1rem;
+}
+
+#minat h4 span {
+     color: #774d1a;
+font-weight: bold;
+}
+
+#minat p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #9b6a45;
+  margin: 0;
+}
+
+/* Tombol */
+#minat .content-btn {
+  flex-shrink: 0;
+}
+
+.btn-brown {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: 2px solid #6b3f1f;
+  color: #6b3f1f;
+  background: transparent;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-brown:hover {
+  background: #6b3f1f;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #minat .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #minat .content-btn {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* galery */
+/* Warna tema */
+.text-brown {
+  color: #9b6a45;
+}
+
+/* Tombol filter villa */
+.btn-outline-brown {
+  border: 2px solid #9b6a45;
+  color: #9b6a45;
+  background: #f9f3f0;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+} 
+
+.btn-outline-brown.active,
+.btn-outline-brown:hover {
+  background: #9b6a45;
+  color: #fff;
+}
+
+/* Kartu galeri */
+.card {
+  border: none;
+  background: transparent;
+}
+
+.card img {
+  height: 120px;          /* lebih kecil dari sebelumnya */
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform .3s ease;
+  cursor: pointer;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+
+/* customer */
+.customer {
+  background: #f9f4f0;
+  padding: 20px 0;
+    margin-bottom: 30px;
+  text-align: center;
+}
+
+.customer .title {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #6c4c3c;
+}
+
+.customer .title .highlight { color: #c07b3f; }
+
+.customer .desc {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+/* viewport */
+.customer-logos {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* track */
+.customer-logos-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.6s ease;
+  width: 100%; /* diubah via JS */
+}
+
+/* item */
+.logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo-item img {
+  max-height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: all .25s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(30%);
+  transform: scale(1.05);
+}
+
+/* dots */
+.customer-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.customer-dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.customer-dots span .progress {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #a0522d; /* warna sesuai tema */
+  transition: width linear;
+}
+
+.customer-dots span.active {
+  background: #a15c2d;
+  transform: scale(1.2);
+}
+
+
+
+/* contact */
+.contact {
+    
+  padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.contact .info {
+  flex: 1;
+}
+
+.contact .info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact .info-item .icon {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  background: #f9f3ef;
+  color: #c07b3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.contact .info-item h4 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.contact .info-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact .info-item a {
+  color: #c07b3f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact .info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Form */
+.contact .form {
+  flex: 1;
+}
+
+.contact .form input,
+.contact .form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact .form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact .form .btn {
+  background: transparent;
+  border: 2px solid #c07b3f;
+  color: #c07b3f;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.contact .form .btn:hover {
+  background: #c07b3f;
+  color: #fff;
+}
+
+
+
+
+footer {
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  flex: 1.5;
+  min-width: 250px;
+}
+
+.footer-left img.footer-logo {
+  width: 150px;
+  margin-bottom: 10px;
+ padding-left: 30px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.footer-links,
+.footer-villa,
+.footer-social {
+  flex: 1;
+  min-width: 180px;
+}
+
+footer h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.footer-links ul,
+.footer-villa ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li,
+.footer-villa ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a,
+.footer-villa ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover,
+.footer-villa ul li a:hover {
+  color: #c07b3f;
+}
+
+/* Social Icons */
+.footer-social ul {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #c07b3f;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+  background: #a35f2d;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 30px;
+  background: #b3723a;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+}
+
+

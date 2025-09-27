@@ -44,26 +44,30 @@
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
 
     
+<!-- GLightbox -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     {{-- Custom CSS --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/frontend/app.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('_css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/frontend/app.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('_css/style.css') }}"> --}}
 </head>
 <body>
 
     {{-- Header --}}
-    @include('frontend.layout.header')
-
+    @include('frontend.components.header')
+    
     {{-- Konten --}}
     <main>
-        @yield('content')
+      @yield('content')
     </main>
-
+    
     {{-- Footer --}}
-    @include('frontend.layout.footer')
+    @include('frontend.components.footer') 
 
     {{-- Bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="{{ asset('js/app.js') }}"></script>
+ 
+    <script src="{{ asset('_js/main.js') }}"></script>
 </body>
 </html>

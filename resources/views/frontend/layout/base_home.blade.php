@@ -72,8 +72,8 @@ $villas = [
 @endphp
 
 <section class="container py-5 fasilitas" id="fasilitas">
-  <h3 class="section-title text-center mb-3 title">
-    Fasilitas <span class="fw-bold">Villa Kami</span>
+  <h3 class="section-title text-center mb-1 title">
+    Fasilitas <span class="highlight">Villa Kami</span>
   </h3>
   <p class="text-center mb-4 px-3 px-md-5 mx-auto" style="max-width: 720px;">
     Villa-villa kami dilengkapi dengan berbagai fasilitas yang cocok untuk mengisi liburan
@@ -197,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <section id="minat" class="minat">
   <div class="container">
     <div class="content-text">
-      <h4 class="fw-bold mb-3">
-        Apakah <span class="text-dark">Anda Berminat</span>?
+      <h4 class=" minatTitle">
+        Apakah <span class="minatHighlight">Anda Berminat</span>?
       </h4>
       <p class="mb-4">
         Kami menghadirkan fasilitas lengkap dengan kenyamanan layaknya rumah sendiri, 
@@ -243,9 +243,11 @@ $villas = [
 
 <section id="gallery" class="py-5">
   <div class="container text-center">
-    <h4 class="fw-bold mb-3">
-      Galeri <span class="text-brown">Foto</span>
-    </h4>
+     <h3 class="section-title text-center mb-1 title">
+    Galeri <span class="highlight">Foto</span>
+  </h3>
+
+    
     <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
       Kegiatan kami mencakup beragam galeri menarik, yang menampilkan kreasi luar biasa para peserta,
       proyek inovatif, dan pertunjukan luar biasa, yang menumbuhkan rasa bangga dan pencapaian
@@ -255,7 +257,7 @@ $villas = [
     <!-- Pilihan villa -->
     <div class="mb-4">
       @foreach($villas as $index => $villa)
-        <button class="btn btn-sm btn-outline-brown {{ $index === 0 ? 'active' : '' }}" data-villa="{{ $villa['slug'] }}">
+        <button class="btn-outline-brown {{ $index === 0 ? 'active' : '' }}" data-villa="{{ $villa['slug'] }}">
           {{ sprintf('%02d', $index+1) }}. {{ $villa['name'] }}
         </button>
       @endforeach
@@ -334,10 +336,12 @@ $customer = [
   <div class="container text-center">
 
     <!-- Title & Desc -->
-    <span class="title">
-      Siapa <span class="highlight">Pelanggan Kami</span>
-    </span>
-    <p class="desc">
+     <h3 class="section-title text-center mb-1 title">
+    Siapa <span class="highlight">Pelanggan Kami</span>
+  </h3>
+
+    
+    <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
       Loyalitas pelanggan kami merupakan bukti komitmen teguh kami untuk 
       menyediakan produk dan layanan yang luar biasa, membangun hubungan yang kuat, 
       dan secara konsisten melampaui harapan pelanggan kami.
@@ -461,8 +465,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <section id="contact" class="contact">
   <div class="container">
+    <div class="text-center">
+      <span class="section-title text-center mb-1 title">
+ Hubungi <span class="highlight">Kami</span>
+</span>
+ <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
+      Loyalitas pelanggan kami merupakan bukti komitmen teguh kami untuk 
+      menyediakan produk dan layanan yang luar biasa, membangun hubungan yang kuat, 
+      dan secara konsisten melampaui harapan pelanggan kami.
+    </p>
+    </div>
     <div class="row">
-      
+
+    
+   
       <!-- Info -->
       <div class="col info">
         
@@ -526,51 +542,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-<footer>
-    <div class="container footer-content">
-        <!-- Kolom 1 -->
-        <div class="footer-left">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="footer-logo">
-            <p>Nikmati suasana sejuk pegunungan dan pemandangan indah khas Puncak Bogor di Villa Aurora, vila eksklusif dengan kapasitas besar (60-100 orang). Cocok untuk acara keluarga, gathering kantor, retret, reuni, maupun kegiatan komunitas.</p>
-        </div>
-
-        <!-- Kolom 2 -->
-        <div class="footer-links">
-            <h4>Link Terkait</h4>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">Privacy policy</a></li>
-            </ul>
-        </div>
-
-        <!-- Kolom 3 -->
-        <div class="footer-villa">
-            <h4>The Gallery Villa</h4>
-            <ul>
-                <li><a href="#">Villa Aurora</a></li>
-                <li><a href="#">Villa Esperanza</a></li>
-            </ul>
-        </div>
-
-        <!-- Kolom 4 -->
-        <div class="footer-social">
-            <h4>Our Social Network</h4>
-            <ul>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; Copyright, {{ date('Y') }} <strong>The Gallery Villa</strong>. All Rights Reserved</p>
-    </div>
-</footer>
 
