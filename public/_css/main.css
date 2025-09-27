@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background: #fff;
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+ 
+ 
+ 
+.topbar {
+    background: #fff;
+    font-size: 14px;
+}
+.topbar a {
+    color: #5a4634;
+}
+.topbar a:hover {
+    color: #a56c2f;
+}
+
+/* Logo */
+.logo-img {
+    max-height: 80px;
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    color: #5a4634;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background: #5a4634;
+    color: #fff;
+}
+
+
+
+
+
+/* Section Minat */
+#minat {
+  position: relative;
+  padding: 4rem 0;
+  background: url('/assets/img/villa/2.jpg') center center/cover no-repeat;
+}
+
+#minat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 235, 225, 0.85);
+  z-index: 1;
+}
+
+ #minat .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+}
+
+
+/* Bagian teks */
+#minat .content-text {
+  flex: 1;
+}
+
+#minat h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4a2f1b;
+  margin-bottom: 1rem;
+}
+
+#minat h4 span {
+  color: #000;
+}
+
+#minat p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #9b6a45;
+  margin: 0;
+}
+
+/* Tombol */
+#minat .content-btn {
+  flex-shrink: 0;
+}
+
+.btn-brown {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: 2px solid #6b3f1f;
+  color: #6b3f1f;
+  background: transparent;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-brown:hover {
+  background: #6b3f1f;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #minat .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #minat .content-btn {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,135 @@
+
+.fasilitas .title {
+  display: block;
+  /* font-weight: 700; */
+  font-size: 28px;
+  color: #a56c2f;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.fasilitas .highlight {
+      font-weight: 700;
+
+  color: #a56c2f;
+}
+
+.fasilitas .desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+/* Tombol Switch */
+.btn-villa {
+  border: 2px solid #b85c38;
+  color: #b85c38;
+  background: #f9f3f0;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-villa:hover {
+  background: #b85c38;
+  color: #fff;
+}
+
+.btn-villa.active {
+  background: #b85c38;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(184, 92, 56, 0.25);
+}
+
+/* Card fasilitas */
+/* Card fasilitas */
+.facility-card {
+  text-align: center;
+}
+
+.facility-img {
+  width: 100%;
+  max-width: 240px; /* agak lebih kecil */
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.facility-img:hover {
+  transform: scale(1.05);
+}
+
+.facility-card p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #5a4634;
+}
+
+/* Gambar lebih kecil */
+.facility-img {
+  width: 100%;
+  max-width: 350px; /* perkecil gambar */
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+/* .facility-img:hover {
+  transform: scale(1.03);
+} */
+
+.facility-card p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #5a4634;
+}
+
+/* Dots indikator */
+.dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #c4a88a;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #b85c38;
+  transform: scale(1.2);
+}
+
+
+ 
+ .facility-img-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.25s ease;
+}
+
+
+.facility-villa-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 0 0 10px 10px;
+}

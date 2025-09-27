@@ -1,0 +1,88 @@
+
+/* contact */
+.contact {
+    
+  padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.contact .info {
+  flex: 1;
+}
+
+.contact .info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact .info-item .icon {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  background: #f9f3ef;
+  color: #c07b3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.contact .info-item h4 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.contact .info-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact .info-item a {
+  color: #c07b3f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact .info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Form */
+.contact .form {
+  flex: 1;
+}
+
+.contact .form input,
+.contact .form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact .form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact .form .btn {
+  background: transparent;
+  border: 2px solid #c07b3f;
+  color: #c07b3f;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.contact .form .btn:hover {
+  background: #c07b3f;
+  color: #fff;
+}
+

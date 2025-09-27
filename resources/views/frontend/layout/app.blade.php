@@ -11,6 +11,7 @@
   data-assets-path="{{ asset('/assets') . '/' }}"
   data-base-url="{{url('/')}}"
   data-template="vertical-menu-template">
+  
 
 <head>
     <meta charset="utf-8" />
@@ -44,7 +45,8 @@
 
     
     {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/frontend/app.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/frontend/app.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('_css/style.css') }}">
 </head>
 <body>
 

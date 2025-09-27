@@ -1,0 +1,92 @@
+
+/* customer */
+.customer {
+  background: #f9f4f0;
+  padding: 20px 0;
+    margin-bottom: 30px;
+  text-align: center;
+}
+
+.customer .title {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #6c4c3c;
+}
+
+.customer .title .highlight { color: #c07b3f; }
+
+.customer .desc {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+/* viewport */
+.customer-logos {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* track */
+.customer-logos-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.6s ease;
+  width: 100%; /* diubah via JS */
+}
+
+/* item */
+.logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo-item img {
+  max-height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: all .25s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(30%);
+  transform: scale(1.05);
+}
+
+/* dots */
+.customer-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.customer-dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.customer-dots span .progress {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #a0522d; /* warna sesuai tema */
+  transition: width linear;
+}
+
+.customer-dots span.active {
+  background: #a15c2d;
+  transform: scale(1.2);
+}

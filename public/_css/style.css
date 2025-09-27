@@ -1,0 +1,10 @@
+@import url('_variable.css');
+@import url('main.css');
+
+/* Pages */
+@import url('custom/pages/hero.css');
+@import url('custom/pages/facilities.css');
+@import url('custom/pages/gallery.css');
+@import url('custom/pages/customer.css');
+@import url('custom/pages/contact.css');
+@import url('custom/pages/footer.css');

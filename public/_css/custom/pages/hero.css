@@ -1,0 +1,178 @@
+ .hero {
+  position: relative;
+  text-align: center;
+  background: #ffffff;
+  padding-bottom: 30px;
+}
+
+.hero-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-images img {
+  object-fit: cover;
+  max-width: 75%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .hero-images img { width: 60%; }
+}
+@media (max-width: 576px) {
+  .hero-images img { width: 100%; }
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.about .btn {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.about .btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+
+
+/* ===== Facilities Section ===== */
+.facilities {
+  background: #f5ebe3; 
+    margin-bottom: 30px;
+
+}
+
+.facilities .title {
+  display: block;
+  /* font-weight: 700; */
+  font-size: 28px;
+  color: #a56c2f;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.facilities .highlight {
+      font-weight: 700;
+
+  color: #a56c2f;
+}
+
+.facilities .desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+/* Villa List */
+.villa-list {
+  display: flex;
+    flex-direction: column; /* susun ke bawah */
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.villa-item {
+  background: #fff;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  
+  width: fit-content;   /* biar button ngikut panjang teks */
+  min-width: unset;     /* reset biar nggak auto full */
+}
+
+.villa-item.active,
+.villa-item:hover {
+  background: #b85c38;
+  color: #fff;
+}
+
+/* Images */
+.facilities-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.facilities-images img {
+  object-fit: cover;
+  max-width: 85%;
+  border-radius: 10px;
+   transition: transform 0.3s ease;
+}
+
+.facilities-images img:hover {
+  transform: scale(1.03);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .facilities .title {
+    font-size: 24px;
+  }
+
+  .facilities-images img {
+    width: 70%;
+  }
+}
+
+/* HP */
+@media (max-width: 576px) {
+  .facilities {
+    /* padding: 40px 15px; */
+    text-align: center;
+  }
+
+  .facilities .title {
+    font-size: 22px;
+  }
+
+  .facilities .desc {
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .villa-list {
+    justify-content: center; /* tombol center di hp */
+  }
+
+  .facilities-images img {
+    width: 100%;
+  }
+}
+
