@@ -34,10 +34,10 @@
     <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
         <!-- Logo -->
-        <div class="app-brand mb-4">
-          <a href="{{url('/')}}" class="app-brand-link gap-2">
+        <div class="app-brand mb-4 ">
+          <a href="{{url('/')}}" class="app-brand-link">
             <span class="app-brand-logo">
-                <img src="{{ asset('assets/img/logo-maxon.png') }}" alt="logo maxon" class="w-50">
+                <center><img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="w-50"></center>
             </span>
           </a>
         </div>
