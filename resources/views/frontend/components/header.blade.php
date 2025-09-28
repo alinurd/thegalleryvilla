@@ -40,8 +40,9 @@
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.gallery')}}" href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li>
-                </ul>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li> 
+                </ul>&emsp;&emsp;
+                <a class="btn btn-outline-primary "   href="{{ route('admin.login.view') }}"> <i class="fa-solid fa-arrow-right-to-bracket"></i> &nbsp;Login</a>
             </div>
         </div>
     </nav>
