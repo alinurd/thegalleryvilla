@@ -30,6 +30,9 @@ body {
     font-family: 'Century Gothic', sans-serif;
   
    }
+   .root{
+    padding-top: 20px;
+   }
       /* Header Fixed */
 .header-fixed {
     position: fixed;
@@ -87,7 +90,60 @@ body {
 }
 
 
+  
+.title1 {
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  color: #774d1a;
+  line-height: 1.4; 
+}
+  
+.title1desc {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d5a064; 
+}
+.title1.highlight {
+      font-weight: bold;
 
+  color: #774d1a;
+}
+/* Hilangkan background tombol */
+.accordion-button {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Saat aktif (panel terbuka), tetap transparan */
+.accordion-button:not(.collapsed) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Hilangkan background border item */
+.accordion-item {
+  background: transparent !important;
+  border: none !important;
+}
+
+.accordion-button {
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  color: #774d1a;
+  line-height: 1.4; 
+}
+.accordion-button[aria-expanded="true"],
+.accordion-button:hover {
+  font-weight: 700;
+  font-size: 28px;
+  color: #b0762f;
+  line-height: 1.4; 
+}
+
+  
 .title {
   display: block;
   /* font-weight: 700; */
@@ -426,7 +482,7 @@ body {
 /* Section Minat */
 #minat {
   position: relative;
-  padding: 4rem 0;
+  padding: 20px;
   background: url('/assets/img/villa/2.jpg') center center/cover no-repeat;
 }  
 #minat::before {
