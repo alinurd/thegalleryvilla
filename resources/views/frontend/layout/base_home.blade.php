@@ -22,4 +22,6 @@
 
 @include('frontend.components.gallery')
 @include('frontend.components.client')
+
+
 @include('frontend.components.contact')

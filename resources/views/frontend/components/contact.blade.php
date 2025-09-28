@@ -1,4 +1,4 @@
-2<section id="contact" class="contact">
+<section id="contact" class="contact">
     <div class="container">
         <div class="text-center">
             <span class="section-title text-center mb-1 title">
