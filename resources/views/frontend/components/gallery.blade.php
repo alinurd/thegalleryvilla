@@ -1,4 +1,30 @@
- 
+
+@php
+    $villas = [
+        [
+            'slug' => 'aurora',
+            'name' => 'Villa Aurora',
+            'facilities' => [
+                ['name' => '20 Kamar Tidur', 'image' => '1.png'],
+                ['name' => 'Kolam Renang', 'image' => '2.png'],
+                ['name' => 'Lapangan Basket', 'image' => '3.png'],
+                ['name' => 'Taman Bermain', 'image' => '4.png'],
+                ['name' => 'Gazebo', 'image' => '5.png'],
+            ],
+        ],
+        [
+            'slug' => 'esperanza',
+            'name' => 'Villa Esperanza',
+            'facilities' => [
+                ['name' => 'Ruang Meeting', 'image' => '6.png'],
+                ['name' => 'Kolam Renang', 'image' => '7.png'],
+                ['name' => 'Area BBQ', 'image' => '8.png'],
+                ['name' => 'Lapangan Tenis', 'image' => '9.png'],
+            ],
+        ],
+    ];
+@endphp
+
 <section id="gallery" class="py-5">
     <div class="container text-center">
         <h3 class="section-title text-center mb-1 title">

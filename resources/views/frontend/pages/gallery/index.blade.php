@@ -1,6 +1,7 @@
 @extends('frontend.layout.app')
-<div class="card p-3 text-center">
-    <div class="card-body"> 
-        <span class="title">This is <span class="highlight">Gallery</span> Page</span>
+@include('frontend.components.gallery')
+   <div class="about text-center " style="padding-bottom: 20px"> 
+        <a href="#contact" class="btn">Load Image</a>
     </div>
-</div>
+ 
+     
