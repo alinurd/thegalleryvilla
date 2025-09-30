@@ -19,7 +19,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    {{-- <title>{{ $title }} | {{ $setting?->title ? $setting->title : 'PT. Maxon Prime Technology' }}</title> --}}
+    <title> {{ $setting?->title }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keyword" content="{{$setting->meta_keyword}}" />
     <meta name="description" content="{{$setting->meta_description}}" />
