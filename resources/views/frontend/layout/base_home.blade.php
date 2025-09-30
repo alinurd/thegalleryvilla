@@ -1,4 +1,4 @@
-<section id="hero" class="hero" aria-label="Foto Villa">
+{{-- <section id="hero" class="hero" aria-label="Foto Villa">
     <div class="hero-images">
         <img src="{{ asset('assets/img/villa/hero.png') }}" alt="Foto Villa 1" />
     </div>
@@ -11,8 +11,9 @@
         </p>
         <a href="#contact" class="btn">Gsset Started</a>
     </div>
-</section>
+</section> --}}
 
+@include('frontend.components.hero', ['banner'=>$banner])
 @include('frontend.components.facility')
 @include('frontend.components.facility1')
 

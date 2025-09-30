@@ -1,0 +1,188 @@
+ .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+         
+        .carousel-img {
+            height: 420px;
+            width: 900px;
+            object-fit: cover;
+            max-width: 900px;
+            border-radius: 20px;
+        } 
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        /* Progress Bar Instagram Style */
+        .carousel-progress-container {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            max-width: 900px;
+            z-index: 10;
+            display: flex;
+            gap: 3px;
+        }
+        
+        .progress-bar {
+            flex: 1;
+            height: 2px;
+            background-color: #eda75d66;
+            border-radius: 1px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #f28109c2;
+            border-radius: 1px;
+        }
+        
+        .progress-fill.active {
+            animation: progress 5s linear forwards;
+        }
+        
+        .progress-fill.paused {
+            animation-play-state: paused;
+        }
+        
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        
+        /* Title dengan animasi ketik */
+        .carousel-title {
+            position: absolute;
+            top: 300px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #f9f9f9;;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 9px #513007ac;
+            z-index: 8;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.5s ease;
+        }
+        
+        .carousel-title.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typing-animation {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+        
+        /* Fade efek */
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+        
+        /* Tombol navigasi di luar gambar */
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: #9b6a45;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            z-index: 15;
+        }
+        
+        .carousel-control-prev {
+            left: 0;
+        }
+        
+        .carousel-control-next {
+            right: 0;
+        }
+        
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            background-color: #9b6a45;
+            opacity: 5;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+       
+         
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding: 0 40px;
+            }
+            
+            .carousel-img {
+                height: 300px;
+            }
+            
+            .carousel-control-prev, .carousel-control-next {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-title {
+                font-size: 2rem;
+                top: 40px;
+            }
+             
+        }
+        
+        @media (max-width: 576px) {
+            .carousel-container {
+                padding: 0 30px;
+            }
+            
+            .carousel-img {
+                height: 250px;
+                border-radius: 12px;
+            }
+            
+            .carousel-title {
+                font-size: 1.5rem;
+                top: 35px;
+            }
+            
+            .carousel-progress-container {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+            }
+               
+        }

@@ -1,3 +1,5 @@
+@import url('hero.css');
+
 @font-face {
   font-family: 'Century Gothic';
   font-style: normal;
@@ -191,24 +193,40 @@ body {
     text-decoration: none;
     text-align: center;
 }
+.about .btn:hover {
+  background: #a56c2f;
+  color: #fff;
+  border: 2px solid #f1efef;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .hero {
   position: relative;
   text-align: center;
   background: #ffffff;
   padding-bottom: 30px;
+  padding-top: 10px;
 }
 
 .hero-images {
-   display: flex;
+   /* display: flex; */
   justify-content: center;
   flex-wrap: wrap;
 }
+ 
 
-.hero-images img {
-  object-fit: cover;
-  max-width: 75%;
-  height: auto;
-}
+
+/* 
+@keyframes zoomFade {
+    0%   { transform: scale(1); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: scale(1.05); opacity: 0; }
+} */
+
 
  @media (max-width: 992px) {
   .hero-images img {
