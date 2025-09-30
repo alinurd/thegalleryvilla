@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Master\BannerController;
 use App\Http\Controllers\Admin\Master\FacilityController;
 use App\Http\Controllers\Admin\Master\GalleryController;
 use App\Http\Controllers\Admin\Master\PageDetailController; 
@@ -22,6 +23,17 @@ Route::prefix('/master')->name('master.')->group(function () {
     // ==== facility Routes ====
     Route::prefix('/facility')->name('facility.')->group(function () {
         $localClass = FacilityController::class;
+        Route::get('/', [$localClass, 'index'])->name('index');
+        Route::get('/edit/{id}', [$localClass, 'edit'])->name('edit');
+        Route::post('/submit', [$localClass, 'create'])->name('create');
+        Route::get('/delete/{id}', [$localClass, 'delete'])->name('delete');
+        Route::get('/multidelete', [$localClass, 'multi_delete'])->name('multi_delete');
+        Route::get('/status/{id}', [$localClass, 'editstatus'])->name('status');
+    });
+    
+    // ==== banner Routes ====
+    Route::prefix('/banner')->name('banner.')->group(function () {
+        $localClass = BannerController::class;
         Route::get('/', [$localClass, 'index'])->name('index');
         Route::get('/edit/{id}', [$localClass, 'edit'])->name('edit');
         Route::post('/submit', [$localClass, 'create'])->name('create');

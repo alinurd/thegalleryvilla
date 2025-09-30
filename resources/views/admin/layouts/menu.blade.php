@@ -15,6 +15,11 @@
             'title' => 'Gallery',
             'icon' => 'ti ti-window',
         ],
+       [
+            'route' => 'admin.master.banner.index',
+            'title' => 'Banner',
+            'icon' => 'ti ti-window',
+        ],
     ];
 @endphp
 <ul class="menu-inner py-1">
