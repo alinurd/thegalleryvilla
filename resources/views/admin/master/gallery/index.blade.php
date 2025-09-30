@@ -39,7 +39,9 @@
                     <td>{{ $x + 1 }}</td>
                     <td>
                         @if($item->page_datail_id)
-                        @if ($item->pageDetail->image)
+                        @if($item->type==1)
+                        <span class="badge rounded-pill  bg-info">{{ $item->media ?? 'Unknown' }}</span>
+                        @elseif ($item->pageDetail->image && $item->type != 1)
                             <img src="{{ asset($item->image) }}" alt="unknown" width="40" height="40">
                         @else
                             <img src="{{ asset('assets/img/noimage.jpg') }}" style="height: 80px;" alt="Featured Image"> 
