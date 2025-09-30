@@ -39,6 +39,9 @@ Route::prefix('/master')->name('master.')->group(function () {
         Route::get('/delete/{id}', [$localClass, 'delete'])->name('delete');
         Route::get('/multidelete', [$localClass, 'multi_delete'])->name('multi_delete');
         Route::get('/status/{id}', [$localClass, 'editstatus'])->name('status');
+                Route::get('/delete-media/{id}', [$localClass, 'deleteMedia'])->name('delete_media');
+
+        
     });
 
     });

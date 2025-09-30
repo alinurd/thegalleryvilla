@@ -20,6 +20,7 @@
                     <th>No</th>
                     <th>Page Detail</th> 
                     <th>Facility</th> 
+                    <th>Media</th> 
                     <th>Sort</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -38,7 +39,7 @@
                     <td>{{ $x + 1 }}</td>
                     <td>
                         @if($item->page_datail_id)
-                        @if ($item->pageDetail->image)
+                        @if ($item->pageDetail->image && $item->type != 1)
                             <img src="{{ asset($item->image) }}" alt="unknown" width="40" height="40">
                         @else
                             <img src="{{ asset('assets/img/noimage.jpg') }}" style="height: 80px;" alt="Featured Image"> 
@@ -51,6 +52,15 @@
                       
  
                     <td>{{ $item->title }}</td>
+                    <td class="text-center">  
+                        @if($item->type == 1)
+                            <span class="badge rounded-pill  bg-info">{{ $item->media ?? 'Unknown' }}</span>
+                        @elseif($item->image)
+                            <span class="badge rounded-pill  bg-primary">Image</span>
+                        @else
+                        <span class="badge rounded-pill  bg-secondary">unknown</span>
+                    @endif
+                </td>
                     <td>{{ $item->sort }}</td>
                     <td>
                         <label class="switch">
@@ -72,6 +82,9 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="javascript:void(0);" onclick="btnEditItem('{{ route($prefixRoute.'edit', $item->id) }}', '{{ $item->id }}')"><i data-feather="edit"></i> Edit</a></li>
                                 <li><a class="dropdown-item" href="javascript:void(0);" onclick="btnDeleteItem('{{ route($prefixRoute.'delete', $item->id) }}', '{{ $item->title }}')"><i data-feather="trash"></i> Delete</a></li>
+
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="btnDeleteItem('{{ route($prefixRoute.'delete_media', $item->id) }}', 'Media {{ $item->title }}')"><i data-feather="trash-2"></i> Delete Media</a></li>
+
                             </ul>
                         </div>
                     </td>

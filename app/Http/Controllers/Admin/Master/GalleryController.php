@@ -26,6 +26,9 @@ class GalleryController extends Controller
                                     'title', 
                                     'page_datail_id', 
                                     'description', 
+                                    'type', 
+                                    'link', 
+                                    'media', 
                                 ]);
         $data = (object) $data;
 
@@ -57,6 +60,28 @@ class GalleryController extends Controller
         Gallery::findOrFail($id)->delete();
         return redirect()->route($this->prefixRoute.'index')->withSuccess('Data Berhasil dihapus!');
     }
+   public function deleteMedia($id, $media=0)
+{
+    $upd = [];
+
+    if ($media == 1) { 
+        $upd['link'] = null;
+        $upd['media'] = null;
+    } elseif ($media == 2) { 
+        $upd['image'] = null;
+    } elseif ($media == 0) { 
+        $upd['link'] = null;
+        $upd['media'] = null;
+        $upd['image'] = null;
+    }
+
+    Gallery::where('id', $id)->update($upd);
+
+    return redirect()
+        ->route($this->prefixRoute . 'index')
+        ->withSuccess('Media berhasil dihapus!');
+}
+
 
     public function multi_delete(Request $req)
     {
