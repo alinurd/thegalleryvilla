@@ -68,10 +68,10 @@
     <div class="border rounded p-3">
        
       <div class="mb-3">
-        <label for="video-link" class="form-label">Video Link 
+        <label for="video-link" class="form-label">URL Youtube
             <a href="#" data-bs-toggle="tooltip" data-bs-title="Tempelkna link yang ingin anda masukan"><i data-feather="help-circle"></i></a> 
         </label>
-        <input type="text" id="video-link" class="form-control" placeholder="Masukkan link">
+        <input type="text" id="video-link" class="form-control" placeholder="Masukkan url">
       </div>
  
       <div class="mb-3">

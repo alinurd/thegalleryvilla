@@ -19,8 +19,8 @@
                     </th>
                     <th>No</th>
                     <th>Page Detail</th> 
-                    <th>Facility</th> 
-                    <th>Media</th> 
+                    <th>Gallery Type</th> 
+                    <th>Gallery</th> 
                     <th>Sort</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -49,9 +49,6 @@
                          unknown
                         @endif
                     </td>
-                      
- 
-                    <td>{{ $item->title }}</td>
                     <td class="text-center">  
                         @if($item->type == 1)
                             <span class="badge rounded-pill  bg-info">{{ $item->media ?? 'Unknown' }}</span>
@@ -61,6 +58,7 @@
                         <span class="badge rounded-pill  bg-secondary">unknown</span>
                     @endif
                 </td>
+                <td>{{ $item->title }}</td>
                     <td>{{ $item->sort }}</td>
                     <td>
                         <label class="switch">
