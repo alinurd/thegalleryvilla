@@ -18,7 +18,7 @@
                         </div>
                     </th>
                     <th>No</th>
-                    <th>Category</th> 
+                    <th>Banner Name</th> 
                     <th>Sort</th>
                     <th>Status</th>
                     <th>Action</th>
