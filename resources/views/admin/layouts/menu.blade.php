@@ -12,7 +12,7 @@
         ],
        [
             'route' => 'admin.master.gallery.index',
-            'title' => 'Photo Gallery',
+            'title' => 'Gallery',
             'icon' => 'ti ti-window',
         ],
     ];
