@@ -48,6 +48,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
+    <!-- CDN GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
      {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/css/frontend/app.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('_css/style.css') }}"> --}}
