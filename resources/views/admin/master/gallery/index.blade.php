@@ -40,7 +40,7 @@
                     <td>
                         @if($item->page_datail_id)
                         @if($item->type==1)
-                        <span class="badge rounded-pill  bg-info">{{ $item->media ?? 'Unknown' }}</span>
+                        <span class=""></span>
                         @elseif ($item->pageDetail->image && $item->type != 1)
                             <img src="{{ asset($item->image) }}" alt="unknown" width="40" height="40">
                         @else
