@@ -1,97 +1,122 @@
+<style>
+    /* .honeycomb {
+        display: flex;
+        flex-wrap: wrap;
+        width: 600px;
+         
+    } */
+.honeycomb {
+    display: none; /* default sembunyi */
+   
+}
 
-@php
-    $villas = [
-        [
-            'slug' => 'aurora',
-            'name' => 'Villa Aurora',
-            'facilities' => [
-                ['name' => '20 Kamar Tidur', 'image' => '1.png'],
-                ['name' => 'Kolam Renang', 'image' => '2.png'],
-                ['name' => 'Lapangan Basket', 'image' => '3.png'],
-                ['name' => 'Taman Bermain', 'image' => '4.png'],
-                ['name' => 'Gazebo', 'image' => '5.png'],
-            ],
-        ],
-        [
-            'slug' => 'esperanza',
-            'name' => 'Villa Esperanza',
-            'facilities' => [
-                ['name' => 'Ruang Meeting', 'image' => '6.png'],
-                ['name' => 'Kolam Renang', 'image' => '7.png'],
-                ['name' => 'Area BBQ', 'image' => '8.png'],
-                ['name' => 'Lapangan Tenis', 'image' => '9.png'],
-            ],
-        ],
-    ];
-@endphp
+.honeycomb.active {
+    display: flex; /* hanya yang active muncul */
+    flex-wrap: wrap;
+    width: 600px;
+    margin: 0 auto;
+    
+}
+
+    .hex-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: -35px;
+        /* rapatin ke bawah */
+    }
+
+    .hex-row:nth-child(even) {
+        margin-left: 62px;
+        /* geser setengah hex */
+    }
+
+    .hex {
+        width: 120px;
+        height: 138px;
+        margin: 1px;
+        background: gray;
+        clip-path: polygon(50% 0%,
+                100% 25%,
+                100% 75%,
+                50% 100%,
+                0% 75%,
+                0% 25%);
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+
+    .hex:hover {
+        transform: scale(1.05);
+    }
+
+    .hex img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .hex-row.two-center {
+    justify-content: center;
+    margin-left: 62px; /* geser supaya pas di tengah */
+}
+
+</style>
+ 
 
 <section id="gallery" class="py-5">
     <div class="container text-center">
         <h3 class="section-title text-center mb-1 title">
             Galeri <span class="highlight">Foto</span>
         </h3>
-
-
         <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
             Kegiatan kami mencakup beragam galeri menarik, yang menampilkan kreasi luar biasa para peserta,
             proyek inovatif, dan pertunjukan luar biasa, yang menumbuhkan rasa bangga dan pencapaian
             di antara semua yang terlibat.
         </p>
 
-        <!-- Pilihan villa -->
+        <!-- Tombol pilih villa -->
         <div class="mb-4">
-            @foreach ($villas as $index => $villa)
+            @foreach ($pageDetail as $index => $villa)
                 <button class="btn-outline-brown {{ $index === 0 ? 'active' : '' }}"
-                    data-villa="{{ $villa['slug'] }}">
+                        data-villa="{{ $villa['slug'] }}">
                     {{ sprintf('%02d', $index + 1) }}. {{ $villa['name'] }}
                 </button>
             @endforeach
         </div>
 
-        <!-- Gallery container -->
-        @foreach ($villas as $index => $villa)
-            <div class="row g-3 gallery-wrapper {{ $index !== 0 ? 'd-none' : '' }}" id="gallery-{{ $villa['slug'] }}">
-                @foreach ($villa['facilities'] as $facility)
-                    <div class="col-6 col-md-3">
-                        <div class="card shadow-sm h-100">
-                            <a href="{{ asset('assets/img/villa/fasility/' . $facility['image']) }}" class="glightbox"
-                                data-gallery="{{ $villa['slug'] }}" data-title="{{ $facility['name'] }}">
-                                <img src="{{ asset('assets/img/villa/fasility/' . $facility['image']) }}"
-                                    class="card-img-top" alt="{{ $facility['name'] }}">
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+        <!-- Galeri per villa -->
+        @foreach ($pageDetail as $i => $villa)
+            @php
+                $galleries = array_slice($villa['galleries'], 0, 8);
+                //$galleries = $villa['galleries']; // ambil semua foto
+            @endphp
+
+            
         @endforeach
     </div>
 </section>
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('[data-villa]');
-        const galleries = document.querySelectorAll('.gallery-wrapper');
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll("[data-villa]");
+        const honeycombs = document.querySelectorAll(".honeycomb");
 
-        // toggle gallery berdasarkan tombol
         buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+            btn.addEventListener("click", () => {
+                // reset tombol
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
 
-                galleries.forEach(g => g.classList.add('d-none'));
-                document.getElementById('gallery-' + btn.dataset.villa).classList.remove(
-                    'd-none');
+                // tampilkan honeycomb sesuai slug
+                let slug = btn.dataset.villa;
+                honeycombs.forEach(h => {
+                    h.classList.remove("active");
+                    if (h.id === slug) {
+                        h.classList.add("active");
+                    }
+                });
             });
-        });
-
-        // aktifkan GLightbox
-        GLightbox({
-            selector: '.glightbox',
-            touchNavigation: true,
-            loop: true,
-            closeButton: true,
-            autoplayVideos: false
         });
     });
 </script>
