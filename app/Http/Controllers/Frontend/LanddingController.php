@@ -8,7 +8,7 @@ use App\Models\Master\Banner;
 class LanddingController extends Controller
 {
     public function index(){
-        $data['banner']=Banner::where('status',1)->get();
+        $data['banner']=Banner::where('status',1)->orderby('sort','asc')->get();
         return view('frontend.index', $data);
     }
 
