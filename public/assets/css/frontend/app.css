@@ -411,13 +411,7 @@ body {
   text-align: center;
 }
 
-.facility-img {
-  width: 100%;
-  max-width: 240px; /* agak lebih kecil */
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease;
-}
+ 
 
 .facility-img:hover {
   transform: scale(1.05);
@@ -431,17 +425,15 @@ body {
 
 /* Gambar lebih kecil */
 .facility-img {
-  width: 100%;
-  max-width: 350px; /* perkecil gambar */
+  height: 250px;
+  width: 300px;
+  max-width: 350px;  
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s ease;
-}
+} 
 
-/* .facility-img:hover {
-  transform: scale(1.03);
-} */
-
+ 
 .facility-card p {
   margin-top: 8px;
   font-size: 15px;
@@ -495,6 +487,41 @@ body {
   border-radius: 0 0 10px 10px;
 }
 
+/* 🔹 Responsif */
+@media (max-width: 992px) { /* Tablet */
+  .facility-img {
+    height: 220px;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile landscape */
+  .facility-img {
+    height: 90px;
+    max-width: 150px;
+  }
+
+  .facility-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) { /* Mobile portrait */
+   
+
+  .facility-card {
+    margin-bottom: 20px;
+  }
+
+  .facility-card p {
+    font-size: 13px;
+  }
+
+  .facility-villa-label {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
 
 
 /* Section Minat */

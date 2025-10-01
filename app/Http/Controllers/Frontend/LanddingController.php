@@ -4,11 +4,49 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Master\Banner;
-
+use App\Models\Master\Facility;
+use App\Models\Master\PageDetail;
+use Illuminate\Support\Str;
 class LanddingController extends Controller
 {
     public function index(){
         $data['banner']=Banner::where('status',1)->orderby('sort','asc')->get();
+    
+
+$data['pageDetail'] = PageDetail::with(['facilities', 'galleries', 'customers'])
+    ->where('status', 1)
+    ->orderBy('sort', 'asc')
+    ->get()
+    ->map(function ($page) {
+        return [
+            'slug' => Str::slug($page->title),
+            'name' => $page->title,
+            'facilities' => $page->facilities->map(function ($facility) {
+                return [
+                    'name' => $facility->title,
+                    'image' => $facility->image,
+                ];
+            })->values()->toArray(),
+            'galleries' => $page->galleries->map(function ($gallery) {
+                return [
+                    'image' => $gallery->image,
+                    'description' => $gallery->description,
+                ];
+            })->values()->toArray(),
+            'customers' => $page->customers->map(function ($customer) {
+                return [
+                    'name' => $customer->name,
+                    'review' => $customer->review,
+                    'photo' => $customer->photo,
+                ];
+            })->values()->toArray(),
+        ];
+    })->toArray();
+
+        
+ 
+
+
         return view('frontend.index', $data);
     }
 

@@ -1,31 +1,3 @@
-
-
-@php
-    $villas = [
-        [
-            'slug' => 'aurora',
-            'name' => 'Villa Aurora',
-            'facilities' => [
-                ['name' => '20 Kamar Tidur', 'image' => '1.png'],
-                ['name' => 'Kolam Renang', 'image' => '2.png'],
-                ['name' => 'Lapangan Basket', 'image' => '3.png'],
-                ['name' => 'Taman Bermain', 'image' => '4.png'],
-                ['name' => 'Gazebo', 'image' => '5.png'],
-            ],
-        ],
-        [
-            'slug' => 'esperanza',
-            'name' => 'Villa Esperanza',
-            'facilities' => [
-                ['name' => 'Ruang Meeting', 'image' => '6.png'],
-                ['name' => 'Kolam Renang', 'image' => '7.png'],
-                ['name' => 'Area BBQ', 'image' => '8.png'],
-                ['name' => 'Lapangan Tenis', 'image' => '9.png'],
-            ],
-        ],
-    ];
-@endphp
-
 <section class="container py-5 fasilitas" id="fasilitas">
     <h3 class="section-title text-center mb-1 title">
         Fasilitas <span class="highlight">Villa Kami</span>
@@ -37,7 +9,7 @@
 
     <!-- Tombol Switch -->
     <div class="d-flex justify-content-center gap-2 mb-5">
-        @foreach ($villas as $i => $villa)
+        @foreach ($pageDetail as $i => $villa)
             <button class="btn-villa {{ $i == 0 ? 'active' : '' }}"
                 onclick="showFacility('{{ $villa['slug'] }}', this)">
                 {{ sprintf('%02d', $i + 1) }}. {{ $villa['name'] }}
@@ -46,7 +18,7 @@
     </div>
 
     <!-- Wrapper untuk masing-masing villa -->
-    @foreach ($villas as $i => $villa)
+    @foreach ($pageDetail as $i => $villa)
         <div class="facility-wrapper {{ $i > 0 ? 'd-none' : 'active' }}" id="facility-{{ $villa['slug'] }}">
 
             @php
@@ -55,10 +27,10 @@
             @foreach ($chunks as $j => $chunk)
                 <div class="row text-center facility-slide {{ $j > 0 ? 'd-none' : '' }}">
                     @foreach ($chunk as $facility)
-                        <div class="col-md-4 mb-4 facility-card">
+                        <div class="col-4 col-md-4 mb-2    facility-card">
                             <div class="facility-img-wrapper">
                                 <!-- Gambar -->
-                                <img src="{{ asset('assets/img/villa/fasility/' . $facility['image']) }}"
+                                <img src="{{ asset($facility['image']) }}"
                                     class="facility-img" />
                                 <!-- Label nama villa -->
                                 <div class="facility-villa-label">{{ $villa['name'] }}</div>
@@ -69,7 +41,6 @@
                     @endforeach
                 </div>
             @endforeach
-
 
             <!-- Dots -->
             <div class="dots text-center mt-3">

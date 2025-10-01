@@ -1,3 +1,4 @@
+{{-- {{dd($pageDetail)}} --}}
 <section id="facilities" class="facilities">
     <div class="container">
         <div class="row align-items-center">
@@ -14,8 +15,9 @@
                 </p>
 
                 <div class="villa-list">
-                    <span class="villa-item active">01. Villa Aurora</span>
-                    <span class="villa-item ">02. Villa Esperanza</span>
+                    @foreach ($pageDetail as $index=> $p)
+                    <span class="villa-item {{ $index === 0 ? 'active' : '' }}">{{$index+1}}. {{$p['name']}}</span> 
+                    @endforeach
                 </div>
             </div>
 
