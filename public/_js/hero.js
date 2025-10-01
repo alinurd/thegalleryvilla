@@ -1,5 +1,4 @@
-import './hero'
-
+alert("jalan hero js")
 document.addEventListener("DOMContentLoaded", () => {
             const carousel = document.getElementById('heroCarousel');
             const progressBars = document.querySelectorAll('.progress-fill');
