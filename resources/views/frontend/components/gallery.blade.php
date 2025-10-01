@@ -1,63 +1,49 @@
 <style>
-    /* .honeycomb {
-        display: flex;
-        flex-wrap: wrap;
-        width: 600px;
-         
-    } */
 .honeycomb {
     display: none; /* default sembunyi */
-   
+    margin: 0 auto; 
+    max-width: 600px; /* biar tetap rapih */
 }
 
 .honeycomb.active {
-    display: flex; /* hanya yang active muncul */
-    flex-wrap: wrap;
-    width: 600px;
-    margin: 0 auto;
-    
+    display: block; /* tampilkan hanya yang aktif */
 }
 
-    .hex-row {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -35px;
-        /* rapatin ke bawah */
-    }
+.hex-row {
+    display: flex; 
+    margin-bottom: -35px; /* rapat vertikal */
+}
 
-    .hex-row:nth-child(even) {
-        margin-left: 62px;
-        /* geser setengah hex */
-    }
+.hex-row:nth-child(even) {
+    margin-left: 60px; /* geser baris genap setengah hex */
+}
 
-    .hex {
-        width: 120px;
-        height: 138px;
-        margin: 1px;
-        background: gray;
-        clip-path: polygon(50% 0%,
-                100% 25%,
-                100% 75%,
-                50% 100%,
-                0% 75%,
-                0% 25%);
-        overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
-    }
+.hex {
+    width: 120px;
+    height: 138px;
+    margin: 2px;
+    background: gray;
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
 
-    .hex:hover {
-        transform: scale(1.05);
-    }
+.hex:hover {
+    transform: scale(1.05);
+}
 
-    .hex img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .hex-row.two-center {
-    justify-content: center;
-    margin-left: 62px; /* geser supaya pas di tengah */
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 </style>
@@ -90,7 +76,7 @@
                 $galleries = array_slice($villa['galleries'], 0, 8);
                 //$galleries = $villa['galleries']; // ambil semua foto
             @endphp
-
+<div class="mb-4">
             <div class="honeycomb {{ $i === 0 ? 'active' : '' }}" id="{{ $villa['slug'] }}">
                 @php
                     $row = 1;
@@ -121,8 +107,11 @@
             </div>
         @endforeach
     </div>
+    
 </section>
-
+ <div class="about text-center " style="padding-bottom: 20px"> 
+        <a href="{{ route('guest.gallery') }}" class="btn">Load Image</a>
+    </div> 
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
