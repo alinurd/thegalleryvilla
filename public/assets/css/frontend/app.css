@@ -36,31 +36,23 @@ body {
     padding-top: 20px;
    }
       /* Header Fixed */
-.header-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1100;
-    background: #fff;  
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
 
- body {
-    padding-top: 170px;  
-}
+ 
 
 
 /* Topbar */
 .topbar {
-      color: #c07b3f !important;
-    background: #fff; /* lebih gelap dari navbar */
-    font-size: 14px;
-     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    color: #c07b3f !important;
+    background: #ffffff;
+    font-size: 14px; 
+     box-shadow: none;
+}
+.logo{
+  
+    background: #ffffff;
 }
 .topbar a {
-        color: #c07b3f !important; /* pastikan teks putih */
- 
+    color: #c07b3f !important;
     text-decoration: none;
 }
 .topbar a:hover {
@@ -68,6 +60,7 @@ body {
 }
 
 /* Logo */
+ 
 .logo-img {
     max-height: 70px;
     transition: transform 0.3s ease;
@@ -75,10 +68,27 @@ body {
 .logo-img:hover {
     transform: scale(1.05);
 }
+ 
+.main-navbar {
+    background: #fff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* Navbar Links */
+/* Saat di-scroll, jadi fixed */
+.main-navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Link Navbar */
 .navbar-nav .nav-link {
-      color: #c07b3f !important;
+    color: #c07b3f !important;
     padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -87,9 +97,17 @@ body {
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    background: #c07b3f; /* coklat emas highlight */
-    color: #fff !important; /* pastikan teks putih */
+    background: #c07b3f;
+    color: #fff !important;
 }
+
+/* Biar konten tidak ketutup pas navbar jadi fixed */
+body.has-fixed-navbar {
+    padding-top: 70px; /* tinggi navbar */
+}
+
+
+
 
 
   

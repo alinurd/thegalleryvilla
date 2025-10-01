@@ -102,3 +102,19 @@
                 });
             });
         });
+
+        
+
+//header
+document.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".main-navbar");
+    const body = document.body;
+
+    if (window.scrollY > 150) {
+        navbar.classList.add("fixed");
+        body.classList.add("has-fixed-navbar");
+    } else {
+        navbar.classList.remove("fixed");
+        body.classList.remove("has-fixed-navbar");
+    }
+});
