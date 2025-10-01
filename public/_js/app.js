@@ -105,16 +105,21 @@
 
         
 
-//header
+//header 
 document.addEventListener("scroll", function() {
     const navbar = document.querySelector(".main-navbar");
     const body = document.body;
+    const triggerHeight = document.querySelector(".topbar").offsetHeight + document.querySelector(".logo").offsetHeight;
 
-    if (window.scrollY > 150) {
-        navbar.classList.add("fixed");
-        body.classList.add("has-fixed-navbar");
+    if (window.scrollY > triggerHeight) {
+        if(!navbar.classList.contains("fixed")){
+            navbar.classList.add("fixed");
+            body.classList.add("has-fixed-navbar");
+        }
     } else {
-        navbar.classList.remove("fixed");
-        body.classList.remove("has-fixed-navbar");
+        if(navbar.classList.contains("fixed")){
+            navbar.classList.remove("fixed");
+            body.classList.remove("has-fixed-navbar");
+        }
     }
-});
+}); 

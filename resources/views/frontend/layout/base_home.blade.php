@@ -12,7 +12,7 @@
         <a href="#contact" class="btn">Gsset Started</a>
     </div>
 </section> --}}
-
+@include('frontend.components.header')
 @include('frontend.components.hero', ['banner'=>$banner])
 @include('frontend.components.facility')
 @include('frontend.components.facility1')

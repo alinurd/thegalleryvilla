@@ -27,26 +27,19 @@
     </div>
 
     {{-- 📍 Navbar --}}
-    <nav class="main-navbar navbar navbar-expand-lg border-top">
-        <div class="container justify-content-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+   <nav class="main-navbar navbar navbar-expand-lg">
+    <div class="container justify-content-center">
+        <ul class="navbar-nav text-center gap-4">
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.home')}}" href="{{ route('guest.home') }}">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.about')}}" href="{{ route('guest.about') }}">Mengenai Kami</a></li>
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.gallery')}}" href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li>
+            <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li> 
+        </ul>
+         
+    </div>
+</nav>
 
-            <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
-                <ul class="navbar-nav text-center gap-4">
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.home')}}" href="{{ route('guest.home') }}">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.about')}}" href="{{ route('guest.about') }}">Mengenai Kami</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.gallery')}}" href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li> 
-                </ul>&emsp;&emsp;
-                <a class="btn btn-outline-primary" href="{{ route('admin.login.view') }}">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i> &nbsp;Login
-                </a>
-            </div>
-        </div>
-    </nav>
 </header>
  

@@ -1,3 +1,4 @@
+@include('frontend.components.header')
 @extends('frontend.layout.app')
 
 

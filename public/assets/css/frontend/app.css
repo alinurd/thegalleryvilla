@@ -39,17 +39,12 @@ body {
 
  
 
-
-/* Topbar */
+/* ==================== Topbar ==================== */
 .topbar {
     color: #c07b3f !important;
     background: #ffffff;
-    font-size: 14px; 
-     box-shadow: none;
-}
-.logo{
-  
-    background: #ffffff;
+    font-size: 14px;
+    box-shadow: none; /* hilangkan garis bawah */
 }
 .topbar a {
     color: #c07b3f !important;
@@ -59,8 +54,11 @@ body {
     color: #fa0b03;
 }
 
-/* Logo */
- 
+/* ==================== Logo ==================== */
+.logo {
+    background: #ffffff;
+    text-align: center;
+}
 .logo-img {
     max-height: 70px;
     transition: transform 0.3s ease;
@@ -68,32 +66,36 @@ body {
 .logo-img:hover {
     transform: scale(1.05);
 }
- 
+
+/* ==================== Navbar ==================== */
 .main-navbar {
-    background: #fff;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    transition: all 0.4s ease;
+    border-top: none;
+    border-bottom: none;
 }
 
-/* Saat di-scroll, jadi fixed */
-.main-navbar.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1200;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+/* Navbar horizontal selalu */
+.main-navbar .navbar-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap; /* wrap di layar kecil */
+    justify-content: center;
+    gap: 1rem;
 }
 
-/* Link Navbar */
+/* Sembunyikan tombol hamburger */
+.navbar-toggler {
+    display: none;
+}
+
+/* Navbar Links */
 .navbar-nav .nav-link {
     color: #c07b3f !important;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
-    transition: all 0.3s ease;
     font-size: 15px;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
@@ -101,7 +103,41 @@ body {
     color: #fff !important;
 }
 
-/* Biar konten tidak ketutup pas navbar jadi fixed */
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 0.5rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    .main-navbar .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ==================== Scroll Fixed ==================== */
+.main-navbar.fixed {
+    position: fixed;
+    top: -80px; /* awalnya di atas layar */
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    animation: slideDown 0.4s forwards;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    from { top: -80px; }
+    to { top: 0; }
+}
+
+/* Agar konten tidak tertutup navbar fixed */
 body.has-fixed-navbar {
     padding-top: 70px; /* tinggi navbar */
 }

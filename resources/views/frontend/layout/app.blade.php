@@ -53,8 +53,7 @@
 </head>
 <body>
 
-    {{-- Header --}}
-    @include('frontend.components.header')
+    
     
     {{-- Konten --}}
     <main>
