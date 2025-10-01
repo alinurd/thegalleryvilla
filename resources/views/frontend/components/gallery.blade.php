@@ -91,7 +91,34 @@
                 //$galleries = $villa['galleries']; // ambil semua foto
             @endphp
 
-            
+            <div class="honeycomb {{ $i === 0 ? 'active' : '' }}" id="{{ $villa['slug'] }}">
+                @php
+                    $row = 1;
+                    $offset = 0;
+                @endphp
+                @while ($offset < count($galleries))
+                    @if ($row % 2 === 1) 
+                        <div class="hex-row">
+                            @foreach (array_slice($galleries, $offset, 3) as $facility)
+                                <div class="hex">
+                                    <img src="{{ asset($facility['image']) }}" alt="Gallery Image">
+                                </div>
+                            @endforeach
+                        </div>
+                        @php $offset += 3; @endphp
+                    @else 
+                        <div class="hex-row two-center">
+                            @foreach (array_slice($galleries, $offset, 2) as $facility)
+                                <div class="hex">
+                                    <img src="{{ asset($facility['image']) }}" alt="Gallery Image">
+                                </div>
+                            @endforeach
+                        </div>
+                        @php $offset += 2; @endphp
+                    @endif
+                    @php $row++; @endphp
+                @endwhile
+            </div>
         @endforeach
     </div>
 </section>
