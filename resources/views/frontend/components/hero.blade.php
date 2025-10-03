@@ -4,24 +4,24 @@
                 <div id="heroCarousel" class="carousel carousel-fade slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
                     
                     <!-- Progress Bar Instagram Style -->
-                    <div class="carousel-progress-container">
+                    {{-- <div class="carousel-progress-container">
                         @foreach ($banner as $index => $b)
                             <div class="progress-bar">
                                 <div class="progress-fill {{ $index === 0 ? 'active' : '' }}" 
                                      data-slide="{{ $index }}"></div>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
 
                     <!-- Title Overlay -->
-                    <div class="carousel-overlay">
+                    {{-- <div class="carousel-overlay">
                         @foreach ($banner as $index => $b)
                             <div class="carousel-title {{ $index === 0 ? 'active' : '' }}" 
                                  data-slide="{{ $index }}">
                                 <span class="typing-animation">{{ $b->title }}</span>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
 
                     <!-- isi slide -->
                     <div class="carousel-inner">
