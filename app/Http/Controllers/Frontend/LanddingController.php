@@ -53,8 +53,10 @@ class LanddingController extends Controller
 
     public function about()
     {
+                $data['PageDetail'] = PageDetail::where('status', 1)->orderby('sort', 'asc')->get();
 
-        return view('frontend.pages.about.index');
+
+        return view('frontend.pages.about.index', $data);
     }
     public function facility()
     {
