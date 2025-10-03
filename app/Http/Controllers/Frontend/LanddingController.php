@@ -60,8 +60,24 @@ class LanddingController extends Controller
     }
     public function facility()
     {
+        $data['pageDetail'] = PageDetail::with(['facilities'])
+            ->where('status', 1)
+            ->orderBy('sort', 'asc')
+            ->get()
+            ->map(function ($page) {
+                return [
+                    'slug' => Str::slug($page->title),
+                    'name' => $page->title,
+                    'facilities' => $page->facilities->map(function ($facility) {
+                        return [
+                            'name' => $facility->title,
+                            'image' => $facility->image,
+                        ];
+                    }) ->values()->toArray(),
+                ];
+            })->toArray();
 
-        return view('frontend.pages.facility.index');
+        return view('frontend.pages.facility.index', $data);
     }
     public function gallery()
     {

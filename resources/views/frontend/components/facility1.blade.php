@@ -22,12 +22,12 @@
         <div class="facility-wrapper {{ $i > 0 ? 'd-none' : 'active' }}" id="facility-{{ $villa['slug'] }}">
 
             @php
-                $chunks = array_chunk($villa['facilities'], 3);
+                $chunks = array_chunk($villa['facilities'], ($show ??4));
             @endphp
             @foreach ($chunks as $j => $chunk)
                 <div class="row text-center facility-slide {{ $j > 0 ? 'd-none' : '' }}">
                     @foreach ($chunk as $facility)
-                        <div class="col-4 col-md-4 mb-2    facility-card">
+                        <div class="col-4 col-md-3 mb-2    facility-card">
                             <div class="facility-img-wrapper">
                                 <!-- Gambar -->
                                 <img src="{{ asset($facility['image']) }}"
