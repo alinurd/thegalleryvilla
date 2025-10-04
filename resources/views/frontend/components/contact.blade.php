@@ -1,3 +1,6 @@
+@php
+    $set = AppSetting::first();
+@endphp
 <section id="contact" class="contact">
     <div class="container">
         <div class="text-center">
@@ -32,7 +35,7 @@
                             <span class="icon"><i class="fas fa-envelope"></i></span>
                             <div class="info-content">
                                 <h4>Website/eMail</h4>
-                                <p>www.thegalleryvilla.id<br>thegalleryvilla@gmail.com</p>
+                                <p>{{$set->website??'www.thegalleryvilla.'}}id<br>{{$set->email??'thegalleryvilla@gmail.com'}}</p>
                             </div>
                         </div>
 

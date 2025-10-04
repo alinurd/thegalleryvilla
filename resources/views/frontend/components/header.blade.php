@@ -1,20 +1,37 @@
+@php
+    $set = AppSetting::first();
+@endphp
+
 <header>
     {{-- 🔝 Topbar --}}
     <div class="topbar py-1">
         <div class="container d-flex flex-wrap justify-content-between align-items-center small"> 
             <div class="d-flex align-items-center gap-3">
-                <a href="mailto:thegalleryvilla@gmail.com">
-                    <i class="fa-solid fa-envelope me-1"></i> thegalleryvilla@gmail.com
+                <a href="mailto:{{$set->email??'thegalleryvilla@gmail.com'}}">
+                    <i class="fa-solid fa-envelope me-1"></i> {{$set->email??'thegalleryvilla@gmail.com'}}
                 </a>
-                <a href="tel:+6285883121699">
-                    <i class="fa-solid fa-phone me-1"></i> +62 858-8312-1699
+                <a href="tel:{{$set->mobile_phone??'thegalleryvilla@gmail.com'}}">
+                    <i class="fa-solid fa-phone me-1"></i> {{$set->mobile_phone??'thegalleryvilla@gmail.com'}}
                 </a>
             </div>
             <div class="social-icons">
+                                @if ($set->status_facebook==1)
+
                 <a href="#" class="me-2"><i class="fab fa-facebook"></i></a>
+                                @endif
+@if ($set->status_twitter==1)
                 <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                 @endif
                 <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                @if ($set->status_instagram==1)
+                 @endif
+                 @if ($set->status_youtube==1)
+                    <a class="me-2" href="{{$set->youtube}}"><i class="fab fa-youtube"></i></a>
+                 @endif
+                @if ($set->status_tiktok==1)
+                    <a class="me-2" href="{{$set->tiktok}}"><i class="fab fa-tiktok"></i></a>
+                 @endif
+
             </div>
         </div>
     </div>

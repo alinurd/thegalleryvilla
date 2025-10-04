@@ -1,4 +1,7 @@
-<footer>
+@php
+    $set = AppSetting::first();
+@endphp
+ <footer>
     <div class="container footer-content">
         <!-- Kolom 1 -->
         <div class="footer-left">
@@ -32,15 +35,25 @@
         <div class="footer-social">
             <h4>Our Social Network</h4>
             <ul>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                 @if ($set->status_twitter==1)
+                    <li><a href="{{$set->twitter}}"><i class="fab fa-twitter"></i></a></li>
+                @endif
+                @if ($set->status_facebook==1)
+                    <li><a href="{{$set->facebook}}"><i class="fab fa-facebook"></i></a></li>
+                @endif
+                @if ($set->status_instagram==1)
+                    <li><a href="{{$set->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                 @endif
+                @if ($set->status_youtube==1)
+                    <li><a href="{{$set->youtube}}"><i class="fab fa-youtube"></i></a></li>
+                 @endif
+                @if ($set->status_tiktok==1)
+                    <li><a href="{{$set->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
+                 @endif
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; Copyright, {{ date('Y') }} <strong>The Gallery Villa</strong>. All Rights Reserved</p>
+        <p> {{$set->footer_text}}</p>
     </div>
 </footer>
