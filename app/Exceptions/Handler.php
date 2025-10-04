@@ -27,4 +27,30 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+{
+    if ($this->isHttpException($exception)) {
+    $statusCode = $exception->getStatusCode();
+    $message = $exception->getMessage() ?: 'Terjadi kesalahan';
+
+    if ($statusCode == 404) {
+        return response()->view('frontend.errors.index', [
+            'code' => $statusCode,
+            'message' => $message
+        ], $statusCode);
+    }
+
+    if ($statusCode == 500) {
+        return response()->view('frontend.errors.index', [
+            'code' => $statusCode,
+            'message' => $message
+        ], $statusCode);
+    }
+}
+
+
+    return parent::render($request, $exception);
+}
+
 }
