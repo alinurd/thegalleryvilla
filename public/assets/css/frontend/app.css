@@ -7,28 +7,7 @@
   font-weight: normal;
   font-display: swap;
   src: url('../fonts/GOTHIC.woff') format('woff');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('../fonts/GOTHICB.woff') format('woff');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('../fonts/GOTHICBI.woff') format('woff');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('../fonts/GOTHICI.woff') format('woff');
-}
+} 
 body {
     font-family: 'Century Gothic', sans-serif;
   
@@ -37,12 +16,6 @@ body {
     padding-top: 20px;
    }
       /* Header Fixed */
-
- 
-
-
-
-
 
   
 .title1 {
@@ -316,32 +289,7 @@ body {
 
 
 
-
-/* fasliti */
-
-
-.fasilitas .title {
-  display: block;
-  /* font-weight: 700; */
-  font-size: 28px;
-  color: #a56c2f;
-  line-height: 1.4;
-  margin-bottom: 15px;
-}
-
-.fasilitas .highlight {
-      font-weight: 700;
-
-  color: #a56c2f;
-}
-
-.fasilitas .desc {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 25px;
-  max-width: 500px;
-}
+/* ==================== FASILITAS ==================== */
 
 /* Tombol Switch */
 .btn-villa {
@@ -365,44 +313,75 @@ body {
   box-shadow: 0 3px 8px rgba(184, 92, 56, 0.25);
 }
 
-/* Card fasilitas */
-/* Card fasilitas */
-.facility-card {
-  text-align: center;
+.fasilitas {
+  padding: 60px 0;
 }
 
- 
+/* ===== Grid Layout ===== */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* ===== Card ===== */
+.facility-card {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Gambar ===== */
+.facility-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.facility-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
 .facility-img:hover {
   transform: scale(1.05);
 }
 
+/* ===== Label Nama Villa ===== */
+.facility-villa-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ===== Nama Fasilitas ===== */
 .facility-card p {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 15px;
   color: #5a4634;
 }
 
-/* Gambar lebih kecil */
-.facility-img {
-  height: 250px;
-  width: 300px;
-  max-width: 350px;  
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease;
-    object-fit: cover;
-
-} 
-
- 
-.facility-card p {
-  margin-top: 8px;
-  font-size: 15px;
-  color: #5a4634;
-}
-
-/* Dots indikator */
+/* ===== Dots Indicator ===== */
 .dots {
   margin-top: 15px;
   display: flex;
@@ -415,8 +394,8 @@ body {
   height: 10px;
   background: #c4a88a;
   border-radius: 50%;
-  display: inline-block;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .dot.active {
@@ -425,65 +404,47 @@ body {
 }
 
 
- 
- .facility-img-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform 0.25s ease;
-}
 
-
-.facility-villa-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  padding: 6px 8px;
-  border-radius: 0 0 10px 10px;
-}
-
-/* 🔹 Responsif */
-@media (max-width: 992px) { /* Tablet */
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
   .facility-img {
-    height: 220px;
-    max-width: 260px;
+    height: 180px;
   }
 }
 
-@media (max-width: 768px) { /* Mobile landscape */
-  .facility-img {
-    height: 90px;
-    max-width: 150px;
+@media (max-width: 768px) {
+  .facility-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
   }
-
+  .facility-img {
+    height: 120px;
+  }
   .facility-card p {
     font-size: 14px;
   }
+  .facility-villa-label {
+    font-size: 12px;
+  }
 }
 
-@media (max-width: 576px) { /* Mobile portrait */
-   
-
-  .facility-card {
-    margin-bottom: 20px;
+@media (max-width: 576px) {
+  .facility-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-
+  .facility-img {
+    height: 100px;
+  }
   .facility-card p {
     font-size: 13px;
   }
-
   .facility-villa-label {
-    font-size: 12px;
-    padding: 4px 6px;
+    font-size: 11px;
+    padding: 4px 5px;
   }
 }
+
 
 
 /* Section Minat */

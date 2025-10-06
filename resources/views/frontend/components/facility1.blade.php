@@ -1,3 +1,15 @@
+@php 
+    $show = $show ?? null;
+ 
+    $excludeAurora = !isset($show);
+ 
+    $filtered = array_values(array_filter($pageDetail, function ($v) use ($excludeAurora) {
+        return !$excludeAurora || (($v['slug'] ?? '') !== 'villa-aurora');
+    }));
+ 
+    $perChunk = isset($show) ? (int)$show : 4;
+@endphp
+
 <section class="container py-5 fasilitas" id="fasilitas">
     <h3 class="section-title text-center mb-1 title">
         Fasilitas <span class="highlight">Villa Kami</span>
@@ -9,33 +21,29 @@
 
     <!-- Tombol Switch -->
     <div class="d-flex justify-content-center gap-2 mb-5">
-        @foreach ($pageDetail as $i => $villa)
+        @foreach ($filtered as $i => $villa)
             <button class="btn-villa {{ $i == 0 ? 'active' : '' }}"
                 onclick="showFacility('{{ $villa['slug'] }}', this)">
-                {{ sprintf('%02d', $i + 1) }}. {{ $villa['name'] }}
+                {{ $villa['name'] }}
             </button>
         @endforeach
     </div>
 
     <!-- Wrapper untuk masing-masing villa -->
-    @foreach ($pageDetail as $i => $villa)
-        <div class="facility-wrapper {{ $i > 0 ? 'd-none' : 'active' }}" id="facility-{{ $villa['slug'] }}">
+    @foreach ($filtered as $i => $villa)
+        <div class="facility-wrapper {{ $i == 0 ? 'active' : 'd-none' }}"
+             id="facility-{{ $villa['slug'] }}"
+             data-active-index="0">
+            @php $chunks = array_chunk($villa['facilities'] ?? [], $perChunk); @endphp
 
-            @php
-                $chunks = array_chunk($villa['facilities'], ($show ??4));
-            @endphp
             @foreach ($chunks as $j => $chunk)
                 <div class="row text-center facility-slide {{ $j > 0 ? 'd-none' : '' }}">
                     @foreach ($chunk as $facility)
-                        <div class="col-6 col-md-3 mb-2    facility-card">
+                        <div class="col-6 col-md-3 mb-2 facility-card">
                             <div class="facility-img-wrapper">
-                                <!-- Gambar -->
-                                <img src="{{ asset($facility['image']) }}"
-                                    class="facility-img" />
-                                <!-- Label nama villa -->
+                                <img src="{{ asset($facility['image'] ?? '') }}" class="facility-img" />
                                 <div class="facility-villa-label">{{ $villa['name'] }}</div>
                             </div>
-                            <!-- Nama fasilitas -->
                             <p class="fw-semibold">{{ $facility['name'] }}</p>
                         </div>
                     @endforeach
@@ -52,6 +60,8 @@
         </div>
     @endforeach
 </section>
+
+
 
 <script>
     let slideIntervals = {}; // simpan interval per villa
