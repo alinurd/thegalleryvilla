@@ -297,9 +297,17 @@ body {
     margin-right: auto;
   }
 
+  
   .villa-list {
-    justify-content: center; /* tombol center di hp */
+     flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px; 
   }
+  .villa-item {
+        font-size: 14px;
+        white-space: nowrap; /* biar nama gak kepecah baris */
+    }
 
   .facilities-images img {
     width: 100%;
