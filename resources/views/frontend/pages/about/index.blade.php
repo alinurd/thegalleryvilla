@@ -98,11 +98,20 @@
 @include('frontend.components.minat')
 
 <!-- SECTION 2: VILLA LAIN (ID 2) -->
+<!-- SECTION 2: VILLA LAIN (ID 2) -->
 <section id="facilities2" class="root">
     <div class="container">
         <div class="row align-items-center">
+
+            {{-- Gambar (akan pindah ke atas di mobile) --}}
+            <div class="col-lg-5 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                <div class="facilities-images">
+                    <img src="{{ asset('assets/img/villa/about-2.png') }}" alt="Foto Villa" class="img-fluid" />
+                </div>
+            </div>
+
             {{-- Accordion untuk Villa Lain --}}
-            <div class="col-lg-7 mb-4 mb-lg-0">
+            <div class="col-lg-7 order-2 order-lg-1">
                 <!-- About Section -->
                 <div class="accordion" id="aboutAccordion2">
                     <div class="accordion-item">
@@ -182,13 +191,8 @@
                 </div>
             </div>
 
-            {{-- Gambar tetap diam --}}
-            <div class="col-lg-5 text-center">
-                <div class="facilities-images">
-                    <img src="{{ asset('assets/img/villa/about-2.png') }}" alt="Foto Villa" class="img-fluid" />
-                </div>
-            </div>
         </div>
     </div>
 </section>
+
  
