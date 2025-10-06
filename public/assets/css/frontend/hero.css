@@ -9,14 +9,15 @@
 
 /* Gambar utama */
 .carousel-img {
-    width: 80%;
+    width: auto;
     max-width: 80%;
-    height: 420px;
-    object-fit: cover;
+    height: auto; /* biar tinggi menyesuaikan */
+    object-fit: contain; /* tampilkan seluruh gambar */
     border-radius: 20px;
-    display: block;
     margin: 0 auto;
+    display: block;
 }
+
 
 .carousel-overlay {
     position: absolute;
