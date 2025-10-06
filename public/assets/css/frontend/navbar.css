@@ -74,9 +74,17 @@
 
 /* ==================== Responsive ==================== */
 @media (max-width: 992px) {
+    /* Navbar transparan di mode mobile */
+    .main-navbar {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border: none;
+        box-shadow: none;
+    }
+
     .navbar-collapse {
-        background: #fff;
-        border-top: 1px solid #f0f0f0;
+        background: transparent;
+        border-top: none;
         padding: 15px 0;
     }
 
@@ -91,6 +99,16 @@
         display: block;
         width: 100%;
         text-align: center;
+        color: #fff !important; /* biar kontras di background blur */
+    }
+
+    /* Saat navbar collapse terbuka, kasih sedikit warna blur putih */
+    .navbar-collapse.show {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        margin-top: 10px;
+        transition: background 0.3s ease;
     }
 }
 
@@ -109,8 +127,13 @@
     z-index: 1200;
     background: rgba(255, 255, 255, 0.532);
     backdrop-filter: blur(10px);
-     animation: slideDown 0.4s forwards;
+    animation: slideDown 0.4s forwards;
 }
+  .navbar-nav .nav-link {
+        
+        color: #c07b3f !important; 
+    }
+
 @keyframes slideDown {
     from { top: -80px; }
     to { top: 0; }
