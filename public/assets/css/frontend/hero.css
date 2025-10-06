@@ -9,8 +9,8 @@
 
 /* Gambar utama */
 .carousel-img {
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    max-width: 80%;
     height: 420px;
     object-fit: cover;
     border-radius: 20px;
