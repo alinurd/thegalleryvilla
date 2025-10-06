@@ -1,5 +1,8 @@
 <style>
 /* === Grid Galeri Masonry dengan CSS Grid === */
+#gallery{
+    background: #ffffff;
+}
 .grid-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

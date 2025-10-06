@@ -1,7 +1,7 @@
 @php
     $set = AppSetting::first();
 @endphp
-<section id="contact" class="contact">
+<section id="contact" class="contact root">
     <div class="container">
         <div class="text-center">
             <span class="section-title text-center mb-1 title">
