@@ -27,7 +27,7 @@
             @foreach ($chunks as $j => $chunk)
                 <div class="row text-center facility-slide {{ $j > 0 ? 'd-none' : '' }}">
                     @foreach ($chunk as $facility)
-                        <div class="col-4 col-md-3 mb-2    facility-card">
+                        <div class="col-6 col-md-3 mb-2    facility-card">
                             <div class="facility-img-wrapper">
                                 <!-- Gambar -->
                                 <img src="{{ asset($facility['image']) }}"
