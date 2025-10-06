@@ -2,15 +2,14 @@
 @import url('navbar.css');
 
 @font-face {
-  font-family: 'Century Gothic';
-  font-style: normal;
+  font-family: 'GothicBI';
+  src: url('/assets/fonts/GOTHICBI.TTF') format('truetype');
   font-weight: normal;
-  font-display: swap;
-  src: url('../fonts/GOTHIC.woff') format('woff');
-} 
+  font-style: normal;
+}
+ 
 body {
-    font-family: 'Century Gothic', sans-serif;
-  
+  font-family: 'GothicBI', 'Public Sans', sans-serif;  
    }
    .root{
     padding-top: 20px;
@@ -853,6 +852,7 @@ footer h4 {
 
 /* Footer bottom */
 .footer-bottom {
+  font-family: 'GothicBI', sans-serif;
   margin-top: 30px;
   background: #b3723a;
   padding: 15px 0;
@@ -860,6 +860,7 @@ footer h4 {
 }
 
 .footer-bottom p {
+  font-family: 'GothicBI', sans-serif;
   margin: 0;
   font-size: 13px;
   color: #fff;
