@@ -1,9 +1,9 @@
 /* ==================== Topbar ==================== */
 .topbar {
     color: #c07b3f;
-    background: #ffffff;
-    font-size: 14px;
-    border-bottom: 1px solid #f0f0f0;
+        background: rgba(255, 255, 255, 0.532);
+ 
+    font-size: 14px; 
 }
 .topbar a {
     color: #c07b3f;
