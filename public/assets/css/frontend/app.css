@@ -230,6 +230,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+   position: sticky;
+  padding-top: 80px;
 }
 
 .facilities-images img {
