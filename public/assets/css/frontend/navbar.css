@@ -1,53 +1,120 @@
-/* Header Fixed */
-.header-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1100;
-    background: #fbfbfbfb;  
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
- body {
-    padding-top: 170px;  
-}
-
-/* Topbar */
+/* ==================== Topbar ==================== */
 .topbar {
-    background: #fbfbfbfb; /* lebih gelap dari navbar */
+    color: #c07b3f;
+    background: #ffffff;
     font-size: 14px;
-    color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #f0f0f0;
 }
 .topbar a {
-    color: #f5e9d9;
+    color: #c07b3f;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 .topbar a:hover {
     color: #fa0b03;
 }
 
-/* Logo */
+/* ==================== Logo ==================== */
+.logo {
+    background: #ffffff;
+    text-align: center;
+}
 .logo-img {
-    max-height: 70px;
+    max-height: 80px;
     transition: transform 0.3s ease;
 }
 .logo-img:hover {
     transform: scale(1.05);
 }
 
-/* Navbar Links */
-.navbar-nav .nav-link {
-    color: #f5e9d9; /* warna teks terang */
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+/* ==================== Navbar ==================== */
+.main-navbar {
+    background: #ffffff;
+    border-top: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.4s ease;
+    padding: 8px 0;
 }
 
+.navbar-nav .nav-link {
+    color: #c07b3f !important;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    background: #c07b3f; /* coklat emas highlight */
-    color: #fff;
+    background: #c07b3f;
+    color: #fff !important;
+}
+
+/* ==================== Hamburger Button ==================== */
+.navbar-toggler {
+    border: none;
+    background: none;
+}
+.navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(192,123,63,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ==================== Brand (Mobile) ==================== */
+.mobile-brand {
+    flex: 1;
+}
+.mobile-brand .brand-text {
+    color: #c07b3f;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: #fff;
+        border-top: 1px solid #f0f0f0;
+        padding: 15px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 15px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==================== Logo kecil (mobile) ==================== */
+.logo-img-small {
+    height: 40px;
+    width: auto;
+}
+
+/* ==================== Scroll Fixed ==================== */
+.main-navbar.fixed {
+    position: fixed;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+    background: rgba(255, 255, 255, 0.532);
+    backdrop-filter: blur(10px);
+     animation: slideDown 0.4s forwards;
+}
+@keyframes slideDown {
+    from { top: -80px; }
+    to { top: 0; }
+}
+body.has-fixed-navbar {
+    padding-top: 70px;
 }
