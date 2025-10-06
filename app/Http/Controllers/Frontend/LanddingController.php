@@ -15,7 +15,17 @@ class LanddingController extends Controller
         $data['banner'] = Banner::where('status', 1)->orderby('sort', 'asc')->get();
 
 
-        $data['pageDetail'] = PageDetail::with(['facilities', 'galleries', 'customers'])
+        $data['pageDetail'] = PageDetail::with([
+            'facilities' => function ($q) {
+            $q->where('status', 1);
+        },
+        'galleries' => function ($q) {
+            $q->where('status', 1);
+        },
+        'customers' => function ($q) {
+            $q->where('status', 1);
+        },
+    ])
             ->where('status', 1)
             ->orderBy('sort', 'asc')
             ->get()
@@ -60,7 +70,11 @@ class LanddingController extends Controller
     }
     public function facility()
     {
-        $data['pageDetail'] = PageDetail::with(['facilities'])
+        $data['pageDetail'] = PageDetail::with([
+            'facilities' => function ($q) {
+            $q->where('status', 1);
+        }, 
+    ]) 
             ->where('status', 1)
             ->orderBy('sort', 'asc')
             ->get()
@@ -81,7 +95,17 @@ class LanddingController extends Controller
     }
     public function gallery()
     {
-        $data['pageDetail'] = PageDetail::with(['facilities', 'galleries', 'customers'])
+        $data['pageDetail'] = PageDetail::with([
+            'facilities' => function ($q) {
+            $q->where('status', 1);
+        },
+        'galleries' => function ($q) {
+            $q->where('status', 1);
+        },
+        'customers' => function ($q) {
+            $q->where('status', 1);
+        },
+    ])
             ->where('status', 1)
             ->orderBy('sort', 'asc')
             ->get()
