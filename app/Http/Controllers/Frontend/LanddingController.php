@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Master\Banner;
+use App\Models\Master\Customer;
 use App\Models\Master\Facility;
 use App\Models\Master\PageDetail;
 use Illuminate\Support\Str;
@@ -13,6 +14,7 @@ class LanddingController extends Controller
     public function index()
     {
         $data['banner'] = Banner::where('status', 1)->orderby('sort', 'asc')->get();
+        $data['customer'] = Customer::where('status', 1)->orderby('sort', 'asc')->get();
 
 
         $data['pageDetail'] = PageDetail::with([
