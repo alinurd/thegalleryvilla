@@ -70,7 +70,8 @@
          </div>
     </div>
 </section>
- {{-- <div class="about text-center" style="padding-bottom: 20px"> 
+
+{{-- <div class="about text-center" style="padding-bottom: 20px"> 
     <a href="{{ route('guest.gallery') }}" class="btn">Load Image</a>
 </div> --}}
 
@@ -105,100 +106,62 @@
     }
 
     // Generate gallery
-   // Generate gallery
-function generateGallery() {
-    const galleryContainer = document.getElementById('gallery-container');
-    galleryContainer.innerHTML = '';
+    function generateGallery() {
+        const galleryContainer = document.getElementById('gallery-container');
+        galleryContainer.innerHTML = '';
 
-    pageDetail.forEach((villa, index) => {
-        const galleryDiv = document.createElement('div');
-        galleryDiv.className = `grid-gallery ${index !== 0 ? 'd-none' : ''} fade-in`;
-        galleryDiv.id = `gallery-${villa.slug}`;
+        pageDetail.forEach((villa, index) => {
+            const galleryDiv = document.createElement('div');
+            galleryDiv.className = `grid-gallery ${index !== 0 ? 'd-none' : ''} fade-in`;
+            galleryDiv.id = `gallery-${villa.slug}`;
 
-        if (!villa.galleries || villa.galleries.length === 0) {
-            const emptyMsg = document.createElement('p');
-            emptyMsg.className = "text-muted";
-            emptyMsg.textContent = `Belum ada foto untuk ${villa.name}`;
-            galleryDiv.appendChild(emptyMsg);
-        } else {
-            const shuffledGalleries = shuffleArray([...villa.galleries]).slice(0, 30);
+            if (!villa.galleries || villa.galleries.length === 0) {
+                const emptyMsg = document.createElement('p');
+                emptyMsg.className = "text-muted";
+                emptyMsg.textContent = `Belum ada foto untuk ${villa.name}`;
+                galleryDiv.appendChild(emptyMsg);
+            } else {
+                const shuffledGalleries = shuffleArray([...villa.galleries]).slice(0, 30);
 
-            shuffledGalleries.forEach(gallery => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = "grid-item";
+                shuffledGalleries.forEach(gallery => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = "grid-item";
 
-                // 🔍 Jika punya link (YouTube)
-                if (gallery.link && gallery.media === "YouTube") {
-                    const link = document.createElement('a');
-                    link.href = gallery.link.includes("youtube.com/embed")
-                        ? gallery.link
-                        : gallery.link.replace("watch?v=", "embed/");
-                    link.className = 'glightbox';
-                    link.setAttribute('data-gallery', villa.slug);
-                    link.setAttribute('data-type', 'video'); // penting untuk GLightbox
-                    link.setAttribute('data-title', gallery.title || "Video");
-
-                    // Thumbnail default
-                    const thumb = document.createElement('img');
-                    if (gallery.image) {
-                        thumb.src = `/${gallery.image}`;
-                    } else {
-                        // Thumbnail otomatis dari YouTube
-                        const ytId = link.href.split('/embed/')[1]?.split('?')[0];
-                        thumb.src = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
-                    }
-                    thumb.alt = gallery.title;
-                    thumb.loading = 'lazy';
-                    thumb.onload = () => resizeMasonryItem(itemDiv);
-
-                    link.appendChild(thumb);
-                    itemDiv.appendChild(link);
-                } 
-                // 🎨 Jika hanya gambar biasa
-                else if (gallery.image) {
                     const link = document.createElement('a');
                     link.href = `/${gallery.image}`;
                     link.className = 'glightbox';
                     link.setAttribute('data-gallery', villa.slug);
-                    link.setAttribute('data-title', gallery.title || "Foto");
+                    link.setAttribute('data-title', gallery.title);
 
                     const img = document.createElement('img');
                     img.src = `/${gallery.image}`;
                     img.alt = gallery.title;
                     img.loading = 'lazy';
-                    img.onload = () => resizeMasonryItem(itemDiv);
+                    img.onload = () => resizeMasonryItem(itemDiv); // hitung ulang tinggi setelah load
 
                     link.appendChild(img);
                     itemDiv.appendChild(link);
-                }
+                    galleryDiv.appendChild(itemDiv);
+                });
+            }
 
-                galleryDiv.appendChild(itemDiv);
-            });
+            galleryContainer.appendChild(galleryDiv);
+        });
+
+         if (window.lightbox) {
+            window.lightbox.destroy();
         }
+        window.lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            openEffect: 'zoom',
+            closeEffect: 'fade',
+            zoomable: true
+        });
 
-        galleryContainer.appendChild(galleryDiv);
-    });
-
-    // 🔄 Re-init Lightbox
-    if (window.lightbox) {
-        window.lightbox.destroy();
+         resizeAllMasonryItems();
     }
-    window.lightbox = GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true,
-        openEffect: 'zoom',
-        closeEffect: 'fade',
-        zoomable: true,
-        plyr: {
-            css: 'https://cdn.plyr.io/3.6.8/plyr.css',
-            js: 'https://cdn.plyr.io/3.6.8/plyr.js'
-        }
-    });
-
-    resizeAllMasonryItems();
-}
-
 
     document.addEventListener('DOMContentLoaded', () => {
         generateGallery();

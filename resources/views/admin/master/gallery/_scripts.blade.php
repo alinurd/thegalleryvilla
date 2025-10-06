@@ -230,9 +230,17 @@
         platformBadge.text(mediaPlatfor).addClass("bg-instagram text-white");
     }
  
-    $("#media").val(mediaPlatfor);
+     if(mediaPlatfor !== "YouTube"){
+                                swAlertDialog('error', 'masukan link yang di izinkan ');
+                                $("#media").val(null);
+    $("#video-embed").val(null);
+    $("#video-preview").html(null);
+    }else{
+        $("#media").val(mediaPlatfor);
     $("#video-embed").val(embedUrl);
     $("#video-preview").html(preview);
+    }
+     
 }
 
 </script>
