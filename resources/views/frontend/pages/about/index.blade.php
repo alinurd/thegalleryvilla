@@ -13,8 +13,11 @@
             </div>
             
             <div class="col-lg-7 mb-4 mb-lg-0">
-                <!-- About Section -->
-                <div class="accordion" id="aboutAccordion">
+
+                <!-- Semua accordion disatukan -->
+                <div class="accordion" id="villaAccordion{{ $PageDetail[0]['id'] }}">
+
+                    <!-- About -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="aboutHeading{{ $PageDetail[0]['id'] }}">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -26,16 +29,15 @@
                         </h2>
                         <div id="aboutCollapse{{ $PageDetail[0]['id'] }}"
                             class="accordion-collapse collapse show"
-                            aria-labelledby="aboutHeading{{ $PageDetail[0]['id'] }}">
+                            aria-labelledby="aboutHeading{{ $PageDetail[0]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[0]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[0]['about'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Facilities Section -->
-                <div class="accordion mt-3" id="facilityAccordion">
+                    <!-- Facilities -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="facilityHeading{{ $PageDetail[0]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -45,16 +47,15 @@
                             </button>
                         </h2>
                         <div id="facilityCollapse{{ $PageDetail[0]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="facilityHeading{{ $PageDetail[0]['id'] }}">
+                            aria-labelledby="facilityHeading{{ $PageDetail[0]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[0]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[0]['facility'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Location Section -->
-                <div class="accordion mt-3" id="locationAccordion">
+                    <!-- Location -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="locationHeading{{ $PageDetail[0]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -64,16 +65,15 @@
                             </button>
                         </h2>
                         <div id="locationCollapse{{ $PageDetail[0]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="locationHeading{{ $PageDetail[0]['id'] }}">
+                            aria-labelledby="locationHeading{{ $PageDetail[0]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[0]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[0]['location'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Event Type Section -->
-                <div class="accordion mt-3" id="eventAccordion">
+                    <!-- Event Type -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="eventHeading{{ $PageDetail[0]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -83,21 +83,23 @@
                             </button>
                         </h2>
                         <div id="eventCollapse{{ $PageDetail[0]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="eventHeading{{ $PageDetail[0]['id'] }}">
+                            aria-labelledby="eventHeading{{ $PageDetail[0]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[0]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[0]['event_type'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
+
+                </div> <!-- /accordion -->
             </div>
         </div>
     </div>
 </section>
 
-@include('frontend.components.minat')
 
-<!-- SECTION 2: VILLA LAIN (ID 2) -->
+@include('frontend.components.minat')
+ 
 <!-- SECTION 2: VILLA LAIN (ID 2) -->
 <section id="facilities2" class="root">
     <div class="container mt-5">
@@ -112,8 +114,9 @@
 
             {{-- Accordion untuk Villa Lain --}}
             <div class="col-lg-7 order-2 order-lg-1">
-                <!-- About Section -->
-                <div class="accordion" id="aboutAccordion2">
+                <div class="accordion" id="villaAccordion{{ $PageDetail[1]['id'] }}">
+
+                    <!-- About -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="aboutHeading{{ $PageDetail[1]['id'] }}">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -125,16 +128,15 @@
                         </h2>
                         <div id="aboutCollapse{{ $PageDetail[1]['id'] }}"
                             class="accordion-collapse collapse show"
-                            aria-labelledby="aboutHeading{{ $PageDetail[1]['id'] }}">
+                            aria-labelledby="aboutHeading{{ $PageDetail[1]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[1]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[1]['about'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Facilities Section -->
-                <div class="accordion mt-3" id="facilityAccordion2">
+                    <!-- Facilities -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="facilityHeading{{ $PageDetail[1]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -144,16 +146,15 @@
                             </button>
                         </h2>
                         <div id="facilityCollapse{{ $PageDetail[1]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="facilityHeading{{ $PageDetail[1]['id'] }}">
+                            aria-labelledby="facilityHeading{{ $PageDetail[1]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[1]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[1]['facility'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Location Section -->
-                <div class="accordion mt-3" id="locationAccordion2">
+                    <!-- Location -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="locationHeading{{ $PageDetail[1]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -163,16 +164,15 @@
                             </button>
                         </h2>
                         <div id="locationCollapse{{ $PageDetail[1]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="locationHeading{{ $PageDetail[1]['id'] }}">
+                            aria-labelledby="locationHeading{{ $PageDetail[1]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[1]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[1]['location'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Event Type Section -->
-                <div class="accordion mt-3" id="eventAccordion2">
+                    <!-- Event Type -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="eventHeading{{ $PageDetail[1]['id'] }}">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -182,15 +182,16 @@
                             </button>
                         </h2>
                         <div id="eventCollapse{{ $PageDetail[1]['id'] }}" class="accordion-collapse collapse"
-                            aria-labelledby="eventHeading{{ $PageDetail[1]['id'] }}">
+                            aria-labelledby="eventHeading{{ $PageDetail[1]['id'] }}"
+                            data-bs-parent="#villaAccordion{{ $PageDetail[1]['id'] }}">
                             <div class="accordion-body">
                                 {!! nl2br(e($PageDetail[1]['event_type'])) !!}
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
+                </div> <!-- /accordion -->
+            </div>
         </div>
     </div>
 </section>
