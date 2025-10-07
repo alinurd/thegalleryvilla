@@ -51,12 +51,14 @@
             @endforeach
 
             <!-- Dots -->
+            @if(!$show)
             <div class="dots text-center mt-3">
                 @foreach ($chunks as $j => $chunk)
                     <span class="dot {{ $j == 0 ? 'active' : '' }}"
                         onclick="showSlide('{{ $villa['slug'] }}', {{ $j }}, true)"></span>
                 @endforeach
             </div>
+            @endif
         </div>
     @endforeach
 </section>
