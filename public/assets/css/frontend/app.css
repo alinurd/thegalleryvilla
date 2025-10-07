@@ -226,11 +226,11 @@ body {
 /* Images */
 .facilities-images {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
   gap: 15px;
    position: sticky;
-  padding-top: 80px;
+  padding-top: 10px;
 }
 
 .facilities-images img {
