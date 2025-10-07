@@ -4,7 +4,7 @@
     $excludeAurora = !isset($show);
  
     $filtered = array_values(array_filter($pageDetail, function ($v) use ($excludeAurora) {
-        return !$excludeAurora || (($v['slug'] ?? '') !== 'villa-aurora');
+        return !$excludeAurora || (($v['slug'] ?? '') !== 'villa-aurorax');
     }));
  
     $perChunk = isset($show) ? (int)$show : 4;
@@ -42,7 +42,7 @@
                         <div class="col-6 col-md-3 mb-2 facility-card">
                             <div class="facility-img-wrapper">
                                 <img src="{{ asset($facility['image'] ?? '') }}" class="facility-img" />
-                                <div class="facility-villa-label">{{ $villa['name'] }}</div>
+                                {{-- <div class="facility-villa-label">{{ $villa['name'] }}</div> --}}
                             </div>
                             <p class="fw-semibold">{{ $facility['name'] }}</p>
                         </div>
@@ -118,7 +118,7 @@
         slideIntervals[villa] = setInterval(() => {
             index = (index + 1) % slides.length;
             showSlide(villa, index);
-        }, 4000); // ganti slide tiap 4 detik
+        }, 10000); // ganti slide tiap 4 detik
     }
 
     // mulai auto-slide pertama kali
