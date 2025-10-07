@@ -58,14 +58,14 @@ body {
 .accordion-button {
   display: block;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 20px;
   color: #774d1a;
   line-height: 1.4; 
 }
 .accordion-button[aria-expanded="true"],
 .accordion-button:hover {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 20px;
   color: #b0762f;
   line-height: 1.4; 
 }
