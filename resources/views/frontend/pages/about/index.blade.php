@@ -3,7 +3,7 @@
 
 <!-- SECTION 1: VILLA AURORA (ID 1) -->
 <section id="facilities" class="root">
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             {{-- Gambar tetap (diam) --}}
             <div class="col-lg-5 text-center">
@@ -100,7 +100,7 @@
 <!-- SECTION 2: VILLA LAIN (ID 2) -->
 <!-- SECTION 2: VILLA LAIN (ID 2) -->
 <section id="facilities2" class="root">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
 
             {{-- Gambar (akan pindah ke atas di mobile) --}}
