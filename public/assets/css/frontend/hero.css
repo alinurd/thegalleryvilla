@@ -10,7 +10,7 @@
 /* Gambar utama */
 .carousel-img {
     width: auto;
-    max-width: 80%;
+    max-width: 95%;
     height: auto; /* biar tinggi menyesuaikan */
     object-fit: contain; /* tampilkan seluruh gambar */
     border-radius: 20px;
