@@ -486,9 +486,9 @@ body {
 
 
 #minat h4 {
-  font-size: 1.8rem;  
+  font-size: 20px;  
   color: #774d1a;
-  margin-bottom: 1rem;
+  /* margin-bottom: 10px; */
 }
 
 #minat h4 span {
@@ -532,7 +532,7 @@ font-weight: bold;
     text-align: center;
   }
   #minat .content-btn {
-    margin-top: 1.5rem;
+    margin-top: 2px;
   }
 }
 
