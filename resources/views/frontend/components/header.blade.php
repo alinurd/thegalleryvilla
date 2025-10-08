@@ -65,7 +65,9 @@
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.about')}}" href="{{ route('guest.about') }}">Mengenai Kami</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.facility')}}" href="{{ route('guest.facility') }}">Fasilitas</a></li>
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.gallery')}}" href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
-                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li>
+                    <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="https://wa.me/{{$set->whatsapp}}?text={{ urlencode('Halo Pelanggan setia The Gallery Villa, Saya ingin reservasi (Booking) kamar The Gallery Villa. Bisakah Saya mendapatkan informasi harga Villa Aurora atau Villa Esperanza?') }}"
+   target="_blank">Pemesanan Online</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.booking')}}" href="{{ route('guest.booking') }}">Pemesanan Online</a></li> --}}
                     <li class="nav-item"><a class="nav-link {{isActiveRoute('guest.contact')}}" href="{{ route('guest.contact') }}">Hubungi Kami</a></li> 
                 </ul>
             </div>
