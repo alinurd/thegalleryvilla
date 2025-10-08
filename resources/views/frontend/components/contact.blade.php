@@ -41,7 +41,7 @@ use App\Models\Master\PageDetail;
                             <span class="icon"><i class="fas fa-envelope"></i></span>
                             <div class="info-content">
                                 <h4>Website/eMail</h4>
-                                <p>{{$set->website??'www.thegalleryvilla.'}}id<br>{{$set->email??'thegalleryvilla@gmail.com'}}</p>
+                                <p>{{$set->website??'www.thegalleryvilla.id'}}<br>{{$set->email??'info@thegalleryvilla.id '}}</p>
                             </div>
                         </div>
 
