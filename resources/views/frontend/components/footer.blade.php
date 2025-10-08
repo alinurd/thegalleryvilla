@@ -12,13 +12,12 @@
         <!-- Kolom 2 -->
         <div class="footer-links">
             <h4>Link Terkait</h4>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">Privacy policy</a></li>
+            <ul> 
+                 <li ><a  href="{{ route('guest.home') }}">Beranda</a></li>
+                    <li ><a href="{{ route('guest.about') }}">Mengenai Kami</a></li>
+                    <li ><a  href="{{ route('guest.facility') }}">Fasilitas</a></li>
+                    <li ><a  href="{{ route('guest.gallery') }}">Galeri Foto</a></li>
+                    <li ><a href="{{ route('guest.home') }}">Pemesanan Online</a></li> 
             </ul>
         </div>
 
