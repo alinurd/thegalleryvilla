@@ -24,13 +24,13 @@ use App\Models\Master\PageDetail;
                             <div class="info-content">
                                 <h4>Lokasi</h4>
                                 <p><strong>{{$p[0]->title}}</strong><br>
-                                    {{$p[0]->location}}
+                                    {{$p[0]->address}}
                                     <br>
                                     <a href="{{$p[0]->pin_point}}" target="_blank">Lihat peta</a>
                                 </p>
                                 <br>
                                 <p><strong>{{$p[1]->title}}</strong><br>
-                                    {{$p[1]->location}}
+                                    {{$p[1]->address}}
                                     <br>
                                     <a href="{{$p[1]->pin_point}}" target="_blank">Lihat peta</a>
                                 </p>

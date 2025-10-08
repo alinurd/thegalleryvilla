@@ -59,6 +59,11 @@
   </div>
 
   <div class="mb-3">
+    <label for="address" id="label-address" class="form-label"></label>
+    <textarea name="address" id="address" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
     <label for="pin_point" id="label-pin_point" class="form-label"></label>
     <div class="input-group">
                 <input type="hidden" class="form-control" id="lat" name="latitude" />
@@ -126,6 +131,7 @@ const lang = {
     location: "Strategic Location",
     facility: "Facility",
     event_type: "Suitable Event Type",
+        address: "Address",
     pin_point: "Pint Point",
 
 
@@ -147,6 +153,7 @@ const lang = {
     location: "Strategic Location",
     facility: "Facility",
     event_type: "Suitable Event Type",
+    address: "Address",
     pin_point: "Pint Point",
 
 
@@ -175,6 +182,7 @@ function setLang(l) {
   document.getElementById("label-location").innerText = lang[l].location;
   document.getElementById("label-facility").innerText = lang[l].facility;
   document.getElementById("label-event_type").innerText = lang[l].event_type;
+  document.getElementById("label-address").innerText = lang[l].address;
   document.getElementById("label-pin_point").innerText = lang[l].pin_point;
  
 

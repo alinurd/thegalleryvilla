@@ -27,6 +27,7 @@ class PageDetailController extends Controller
                                     'facility', 
                                     'event_type', 
                                     'pin_point', 
+                                    'address', 
                                 ]);
                                 $latitude  = $request->latitude;
     $longitude = $request->longitude;
