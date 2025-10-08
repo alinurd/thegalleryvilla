@@ -665,12 +665,10 @@ font-weight: bold;
 }
 
 
-
 /* contact */
 .contact {
-    
   padding: 20px 0;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .contact .info {
@@ -753,6 +751,27 @@ font-weight: bold;
   color: #fff;
 }
 
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .contact .row {
+    flex-direction: column !important;
+  }
+
+  .contact .info,
+  .contact .form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact .info .card,
+  .contact .form .card {
+    box-shadow: none;
+  }
+
+  .contact .form .btn {
+    width: 100%;
+  }
+}
 
 
 

@@ -14,9 +14,9 @@ use App\Models\Master\PageDetail;
                 lebih lanjut  tentang layanan kami, jangan ragu untuk menghubungi kami melalui saluran yang disediakan, dan tim kami yang berdedikasi akan dengan senang hati membantu anda.
             </p>
         </div>
-        <div class="row">
+        <div class="row g-4">
             <!-- Info -->
-            <div class="col info">
+            <div class="col-md-6 col-12 info">
                 <div class="card">
                     <div class="card-body">
                         <div class="info-item">
@@ -58,7 +58,7 @@ use App\Models\Master\PageDetail;
 
             <!-- Form -->
 
-            <div class="col form">
+            <div class="col-md-6 col-12 form">
                 <div class="card">
                     <div class="card-body">
                         <form action="{{ route('guest.contact.send') }}" method="POST">
