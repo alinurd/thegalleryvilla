@@ -28,6 +28,7 @@ use App\Models\Master\PageDetail;
                                     <br>
                                     <a href="{{$p[0]->pin_point}}" target="_blank">Lihat peta</a>
                                 </p>
+                                <br>
                                 <p><strong>{{$p[1]->title}}</strong><br>
                                     {{$p[1]->location}}
                                     <br>
