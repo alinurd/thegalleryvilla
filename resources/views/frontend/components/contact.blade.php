@@ -1,6 +1,8 @@
 @php
+use App\Models\Master\PageDetail;
     $set = AppSetting::first();
-@endphp
+    $p = PageDetail::where('status',1)->get();
+  @endphp
 <section id="contact" class="contact root">
     <div class="container">
         <div class="text-center">
@@ -21,12 +23,15 @@
                             <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                             <div class="info-content">
                                 <h4>Lokasi</h4>
-                                <p><strong>Villa Aurora</strong><br>Jl. Kampung Brujul RT 1 RW 2 No. 5, Gang Aek
-                                    Sarula<br>
-                                    <a href="https://maps.google.com" target="_blank">Lihat peta</a>
+                                <p><strong>{{$p[0]->title}}</strong><br>
+                                    {{$p[0]->location}}
+                                    <br>
+                                    <a href="{{$p[0]->pin_point}}" target="_blank">Lihat peta</a>
                                 </p>
-                                <p><strong>Villa Esperanza</strong><br>Jalan Raya Puncak Cisarua, Gang Aek no. 100<br>
-                                    <a href="https://maps.google.com" target="_blank">Lihat peta</a>
+                                <p><strong>{{$p[1]->title}}</strong><br>
+                                    {{$p[1]->location}}
+                                    <br>
+                                    <a href="{{$p[1]->pin_point}}" target="_blank">Lihat peta</a>
                                 </p>
                             </div>
                         </div>
@@ -43,7 +48,7 @@
                             <span class="icon"><i class="fab fa-whatsapp"></i></span>
                             <div class="info-content">
                                 <h4>Whatsapp</h4>
-                                <p>+62 813-1762-3475</p>
+                                <p>{{$set->whatsapp}}</p>
                             </div>
                         </div>
                     </div>
