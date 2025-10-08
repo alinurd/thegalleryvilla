@@ -18,7 +18,7 @@
                         </div>
                     </th>
                     <th>No</th>
-                    <th>Page Detail</th> 
+                    <th>Image</th> 
                     <th>Customer</th> 
                     <th>Sort</th>
                     <th>Status</th>
@@ -37,16 +37,14 @@
                     </td>
                     <td>{{ $x + 1 }}</td>
                     <td>
-                        @if($item->page_datail_id)
-                        @if ($item->pageDetail->image)
+                        {{-- @if($item->page_datail_id) --}}
+                        @if ($item->image)
                             <img src="{{ asset($item->image) }}" alt="unknown" width="40" height="40">
                         @else
                             <img src="{{ asset('assets/img/noimage.jpg') }}" style="height: 80px;" alt="Featured Image"> 
                         @endif
-                        {{ $item->pageDetail->title }}
-                        @else
-                         unknown
-                        @endif
+                        {{-- {{ $item->title }} --}}
+                       
                     </td>
  
                     <td>{{ $item->title ?? $item->title_id }}</td>

@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="row g-1 mb-3">
+        {{-- <div class="row g-1 mb-3">
     <div class="col-md-8 col-12">
       <label for="pageDetail" id="label-pageDetail" class="form-label">Page Detail</label>
       <select name="page_datail_id" class="form-control" id="pageDetail" required>
@@ -58,7 +58,7 @@
         @endforeach
       </select>
     </div>
-  </div>
+  </div> --}}
 
   <div class="mb-3">
     <label for="description" id="label-description" class="form-label"></label>
