@@ -1,8 +1,8 @@
 @php
-use App\Models\Master\PageDetail;
+    use App\Models\Master\PageDetail;
     $set = AppSetting::first();
-    $p = PageDetail::where('status',1)->get();
-  @endphp
+    $p = PageDetail::where('status', 1)->get();
+@endphp
 <section id="contact" class="contact root">
     <div class="container">
         <div class="text-center">
@@ -11,7 +11,8 @@ use App\Models\Master\PageDetail;
             </span>
             <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
                 Jika anda memiliki pertanyaan, permintaan, atau ingin mempelajari
-                lebih lanjut  tentang layanan kami, jangan ragu untuk menghubungi kami melalui saluran yang disediakan, dan tim kami yang berdedikasi akan dengan senang hati membantu anda.
+                lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi kami melalui saluran yang disediakan,
+                dan tim kami yang berdedikasi akan dengan senang hati membantu anda.
             </p>
         </div>
         <div class="row g-4">
@@ -23,16 +24,16 @@ use App\Models\Master\PageDetail;
                             <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                             <div class="info-content">
                                 <h4>Lokasi</h4>
-                                <p><strong>{{$p[0]->title}}</strong><br>
-                                    {{$p[0]->address}}
+                                <p><strong>{{ $p[0]->title }}</strong><br>
+                                    {{ $p[0]->address }}
                                     <br>
-                                    <a href="{{$p[0]->pin_point}}" target="_blank">Lihat peta</a>
+                                    <a href="{{ $p[0]->pin_point }}" target="_blank">Lihat peta</a>
                                 </p>
                                 <br>
-                                <p><strong>{{$p[1]->title}}</strong><br>
-                                    {{$p[1]->address}}
+                                <p><strong>{{ $p[1]->title }}</strong><br>
+                                    {{ $p[1]->address }}
                                     <br>
-                                    <a href="{{$p[1]->pin_point}}" target="_blank">Lihat peta</a>
+                                    <a href="{{ $p[1]->pin_point }}" target="_blank">Lihat peta</a>
                                 </p>
                             </div>
                         </div>
@@ -41,7 +42,8 @@ use App\Models\Master\PageDetail;
                             <span class="icon"><i class="fas fa-envelope"></i></span>
                             <div class="info-content">
                                 <h4>Website/eMail</h4>
-                                <p>{{$set->website??'www.thegalleryvilla.id'}}<br>{{$set->email??'info@thegalleryvilla.id '}}</p>
+                                <p>{{ $set->website ?? 'www.thegalleryvilla.id' }}<br>{{ $set->email ?? 'info@thegalleryvilla.id ' }}
+                                </p>
                             </div>
                         </div>
 
@@ -49,7 +51,7 @@ use App\Models\Master\PageDetail;
                             <span class="icon"><i class="fab fa-whatsapp"></i></span>
                             <div class="info-content">
                                 <h4>Whatsapp</h4>
-                                <p>{{$set->whatsapp}}</p>
+                                <p>{{ $set->whatsapp }}</p>
                             </div>
                         </div>
                     </div>
@@ -61,16 +63,22 @@ use App\Models\Master\PageDetail;
             <div class="col-md-6 col-12 form">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('guest.contact.send') }}" method="POST">
+                        <form action="{{ route('sendMail') }}" method="post" role="form" class="php-email-form">
                             @csrf
                             <div class="row">
-                                <div class="col"><input type="text" name="name" placeholder="Your Name"
-                                        required></div>
+                                <div class="col"><input type="text" name="name"
+                                        placeholder="Your Name"required></div>
                                 <div class="col"><input type="email" name="email" placeholder="Your e-mail"
                                         required></div>
                             </div>
                             <input type="text" name="subject" placeholder="Subject" required>
                             <textarea name="message" placeholder="Messages" required></textarea>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+
                             <button type="submit" class="btn">Submit</button>
                         </form>
                     </div>

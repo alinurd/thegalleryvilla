@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ Route::get('/', function() {
 Route::get('/login', function() {
     return redirect()->route('admin.login.view');
 });
-
+Route::post('send_email',[MailController::class,'index'])->name('sendMail');
 
 
 

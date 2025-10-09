@@ -104,6 +104,12 @@
       <div data-i18n="App Settings">App Settings</div>
     </a>
   </li>
+  <li class="menu-item {{isActiveRoute('admin.setting.emailsetting.index')}}">
+    <a href="{{ route('admin.setting.emailsetting.index') }}" class="menu-link">
+      <i class="menu-icon tf-icons ti ti-table-options"></i>
+      <div data-i18n="Email Settings">Email Settings</div>
+    </a>
+  </li>
   {{-- End Settings --}}
 
 
