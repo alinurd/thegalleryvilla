@@ -86,7 +86,7 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <img src="{{ asset('assets/img/logo.png') }}"> 
+            {{-- <img src="{{ asset('assets/img/logo.png') }}">  --}}
             <h3>{{ $details['title'] }}</h3>
         </div>
         <div class="content">

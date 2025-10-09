@@ -1,8 +1,11 @@
 @php
     use App\Models\Master\PageDetail;
+    use App\Models\AppSetting;
+
     $set = AppSetting::first();
     $p = PageDetail::where('status', 1)->get();
 @endphp
+
 <section id="contact" class="contact root">
     <div class="container">
         <div class="text-center">
@@ -10,11 +13,12 @@
                 Hubungi <span class="highlight">Kami</span>
             </span>
             <p class="mb-4" style="max-width: 700px; margin: 0 auto;">
-                Jika anda memiliki pertanyaan, permintaan, atau ingin mempelajari
-                lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi kami melalui saluran yang disediakan,
+                Jika anda memiliki pertanyaan, permintaan, atau ingin mempelajari lebih lanjut tentang layanan kami,
+                jangan ragu untuk menghubungi kami melalui saluran yang disediakan,
                 dan tim kami yang berdedikasi akan dengan senang hati membantu anda.
             </p>
         </div>
+
         <div class="row g-4">
             <!-- Info -->
             <div class="col-md-6 col-12 info">
@@ -25,14 +29,12 @@
                             <div class="info-content">
                                 <h4>Lokasi</h4>
                                 <p><strong>{{ $p[0]->title }}</strong><br>
-                                    {{ $p[0]->address }}
-                                    <br>
+                                    {{ $p[0]->address }}<br>
                                     <a href="{{ $p[0]->pin_point }}" target="_blank">Lihat peta</a>
                                 </p>
                                 <br>
                                 <p><strong>{{ $p[1]->title }}</strong><br>
-                                    {{ $p[1]->address }}
-                                    <br>
+                                    {{ $p[1]->address }}<br>
                                     <a href="{{ $p[1]->pin_point }}" target="_blank">Lihat peta</a>
                                 </p>
                             </div>
@@ -42,8 +44,7 @@
                             <span class="icon"><i class="fas fa-envelope"></i></span>
                             <div class="info-content">
                                 <h4>Website/eMail</h4>
-                                <p>{{ $set->website ?? 'www.thegalleryvilla.id' }}<br>{{ $set->email ?? 'info@thegalleryvilla.id ' }}
-                                </p>
+                                <p>{{ $set->website ?? 'www.thegalleryvilla.id' }}<br>{{ $set->email ?? 'info@thegalleryvilla.id ' }}</p>
                             </div>
                         </div>
 
@@ -59,32 +60,42 @@
             </div>
 
             <!-- Form -->
-
             <div class="col-md-6 col-12 form">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('sendMail') }}" method="post" role="form" class="php-email-form">
+                        <form class="form" id="formData">
                             @csrf
-                            <div class="row">
-                                <div class="col"><input type="text" name="name"
-                                        placeholder="Your Name"required></div>
-                                <div class="col"><input type="email" name="email" placeholder="Your e-mail"
-                                        required></div>
-                            </div>
-                            <input type="text" name="subject" placeholder="Subject" required>
-                            <textarea name="message" placeholder="Messages" required></textarea>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col">
+                                    <input type="email" name="email" class="form-control" placeholder="Your e-mail" required>
+                                </div>
                             </div>
 
-                            <button type="submit" class="btn">Submit</button>
+                            <div class="mb-3">
+                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <textarea name="message" class="form-control" rows="5" placeholder="Messages" required></textarea>
+                            </div>
+
+                            <button type="button" id="submit" class="btn  w-100">
+                                <span id="simpan">
+                                    <i data-feather="send" class="me-1"></i> Kirim Pesan
+                                </span>
+                                <span id="loading" class="d-none">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Mengirim...
+                                </span>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+ 

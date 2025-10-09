@@ -22,13 +22,13 @@ class MailController extends Controller
       'body' => $request->message,
 
     ];
-    // $adminEmail = 'nrvv000@gmail.com'; 
-    // \Mail::to($adminEmail)->send(new gmailMail($details));
 
 
      $adminEmail = AppSetting::select('email')->first();
      \Mail::to($adminEmail['email'])->send(new gmailMail($details));
-     return response()->json('OK');
+                return response()->json(['status'=>'success', 'message' => 'Data Berhasil disimpan']);
+
+                 
     }
 }
 
