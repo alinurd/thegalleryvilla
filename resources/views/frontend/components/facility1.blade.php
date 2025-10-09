@@ -41,9 +41,19 @@
                     @foreach ($chunk as $facility)
                         <div class="col-6 col-md-3 mb-2 facility-card">
                             <div class="facility-img-wrapper">
-                                <img src="{{ asset($facility['image'] ?? '') }}" class="facility-img" />
-                                {{-- <div class="facility-villa-label">{{ $villa['name'] }}</div> --}}
+                                 <a href="{{ asset($facility['image'] ?? '') }}" 
+                                    class="glightbox-facility " 
+                                    data-gallery="fasilitas-{{ $villa['slug'] }}"
+                                    data-title="{{ $facility['name'] }}">
+                                        <img src="{{ asset($facility['image'] ?? '') }}" 
+                                            class="facility-img" 
+                                            alt="{{ $facility['name'] }}">
+                                    </a>
+
+                                 {{-- <div class="facility-villa-label">{{ $villa['name'] }}</div> --}}
                             </div>
+                           
+
                             <p class="fw-semibold">{{ $facility['name'] }}</p>
                         </div>
                     @endforeach
@@ -129,3 +139,25 @@
         if (firstVilla) startAutoSlide(firstVilla.id.replace("facility-", ""));
     });
 </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const firstVilla = document.querySelector(".facility-wrapper.active");
+        if (firstVilla) startAutoSlide(firstVilla.id.replace("facility-", ""));
+
+        // ✅ Inisialisasi GLightbox untuk fasilitas
+        if (window.facilityLightbox) {
+            window.facilityLightbox.destroy();
+        }
+        window.facilityLightbox = GLightbox({
+            selector: '.glightbox-facility',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            openEffect: 'zoom',
+            closeEffect: 'fade'
+        });
+    });
+</script>
+
