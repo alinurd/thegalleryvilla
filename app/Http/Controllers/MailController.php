@@ -13,26 +13,21 @@ class MailController extends Controller
 {
     public function index(Request $request){
 
-    // $details = [
-    //     'title' => 'Mail from websitepercobaan.com',
-    //     'body' => 'This is for testing email using smtp'
-    //     ];
-    
-    //     \Mail::to('emailpenerima@gmail.com')->send(new \App\Mail\MyTestMail($details));
-    
-    //     dd("Email sudah terkirim.");
 
-    // 
      $details = [
       'email' => $request->email,
       'name' => $request->name,
       'subject' => $request->subject,
-      'title' => 'help care',
+      'title' => 'Info Thegalleryvilla',
       'body' => $request->message,
 
     ];
-     $adminEmail = AppSetting::select('email_2')->first();
-     \Mail::to($adminEmail['email_2'])->send(new gmailMail($details));
+    $adminEmail = 'nrvv000@gmail.com'; 
+    \Mail::to($adminEmail)->send(new gmailMail($details));
+
+
+    //  $adminEmail = AppSetting::select('email')->first();
+    //  \Mail::to($adminEmail['email'])->send(new gmailMail($details));
      return response()->json('OK');
     }
 }

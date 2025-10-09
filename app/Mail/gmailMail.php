@@ -23,7 +23,17 @@ class gmailMail extends Mailable
         $this->details = $details;
     }
 
-    public function build(){
+    public function build()
+{
+    return $this->subject($this->details['subject'])
+                ->replyTo($this->details['email'], $this->details['name'])
+                ->view('emails.mail')
+                ->with('details', $this->details);
+}
+
+
+
+    public function build_(){
         return $this->from($this->details['email'])->subject($this->details['subject'])
                     ->view('emails.mail');
     }
