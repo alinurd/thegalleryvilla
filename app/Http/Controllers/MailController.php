@@ -18,16 +18,16 @@ class MailController extends Controller
       'email' => $request->email,
       'name' => $request->name,
       'subject' => $request->subject,
-      'title' => 'Info Thegalleryvilla',
+      'title' => 'Info The Gallery Villa',
       'body' => $request->message,
 
     ];
-    $adminEmail = 'nrvv000@gmail.com'; 
-    \Mail::to($adminEmail)->send(new gmailMail($details));
+    // $adminEmail = 'nrvv000@gmail.com'; 
+    // \Mail::to($adminEmail)->send(new gmailMail($details));
 
 
-    //  $adminEmail = AppSetting::select('email')->first();
-    //  \Mail::to($adminEmail['email'])->send(new gmailMail($details));
+     $adminEmail = AppSetting::select('email')->first();
+     \Mail::to($adminEmail['email'])->send(new gmailMail($details));
      return response()->json('OK');
     }
 }

@@ -87,12 +87,11 @@
     <div class="email-container">
         <div class="header">
             <img src="{{ asset('assets/img/logo.png') }}"> 
+            <h3>{{ $details['title'] }}</h3>
         </div>
-
         <div class="content">
             <p>Halo, Admin 👋</p>
             <p>Ada pesan baru yang dikirim melalui form kontak di website: </p>
-
             <table>
                 <tr>
                     <th>Nama</th>
